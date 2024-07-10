@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Public">
+      <UniqueIdentifier>{52f4837e-8d5d-4f01-874f-7cbfd57f85c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private">
+      <UniqueIdentifier>{c1e84dca-c3bc-4903-85b9-360210384cf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private\Player">
+      <UniqueIdentifier>{e4aa544c-9292-4eda-9d55-9e201cee0893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Player">
+      <UniqueIdentifier>{eecce770-93b0-4680-b335-05741c89858c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Map">
+      <UniqueIdentifier>{b2ba06c6-129a-41c2-9d35-e92e1451a72b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private\Map">
+      <UniqueIdentifier>{280dffb8-835d-4462-903e-7095e4d81a15}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Player.c">
+      <Filter>private</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerSkill.c">
+      <Filter>private</Filter>
+    </ClCompile>
+    <ClCompile Include="Intro.c">
+      <Filter>private</Filter>
+    </ClCompile>
+    <ClCompile Include="MUDGame.c">
+      <Filter>private</Filter>
+    </ClCompile>
+    <ClCompile Include="WinAPIControl.c">
+      <Filter>private</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.c">
+      <Filter>private\Map</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Player.h">
+      <Filter>Public\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerSkill.h">
+      <Filter>Public\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="enums.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Intro.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="MUDGame.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="WinAPIControl.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Public\Map</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

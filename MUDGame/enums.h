@@ -1,0 +1,46 @@
+enum GameState
+{
+	Intro,
+	Quit,
+};
+
+// Player
+
+enum Color {
+	BLACK,
+	DARK_BLUE,
+	DARK_GREEN,
+	DARK_SKY_BLUE,
+	DARK_RED,
+	DARK_VOILET,
+	DARK_YELLOW,
+	GRAY,
+	DARK_GRAY,
+	BLUE,
+	GREEN,
+	SKY_BLUE,
+	RED,
+	VIOLET,
+	TELLOW,
+	WHITE,
+};
+
+#define col GetStdHandle(STD_OUTPUT_HANDLE)				// ÇÔ¼öÁ¤ÀÇ
+#define BCK SetConsoleTextAttribute(col, 0x0000);		// °ËÀº»ö
+#define WHITE SetConsoleTextAttribute(col, 0x000f);		// Èò»ö
+#define HIG SetConsoleTextAttribute(col, 0x000d);		// Çü±¤
+#define BW SetConsoleTextAttribute(col, 0x00f0);		// °ËÈò»ö
+#define RED SetConsoleTextAttribute(col, 0x000c);		// »¡°­
+#define VIO SetConsoleTextAttribute(col,0x00f1 | 0x000c | 0x000c);	//º¸¶ó
+#define YEL SetConsoleTextAttribute(col, 0x000e);		// ³ë¶õ»ö
+#define SKY SetConsoleTextAttribute(col, 0x000b);		// ÇÏ´Ã»ö
+#define S SetConsoleTextAttribute(col, 0x0003);			// ¿Á»ö
+#define GRAY SetConsoleTextAttribute(col,0x0008);		// È¸»ö
+#define HIGH SetConsoleTextAttribute(col, 0x00a);		// ¿¬µÎ
+#define DA SetConsoleTextAttribute(col, 0x06a);			// »ö¿¬µÎ
+#define WHITE1 SetConsoleTextAttribute(col, 0x007);		// Èò»ö
+#define BULE SetConsoleTextAttribute(col, 0x009);		// ÆÄ¶û
+#define BRED SetConsoleTextAttribute(col, 0x0cc);		// °ËºÓÀº»ö
+#define BGRAY SetConsoleTextAttribute(col, 0x080);		// ÁøÈ¸»ö
+#define G SetConsoleTextAttribute(col, 0x004);			// °¥»ö
+#define GREEN SetConsoleTextAttribute(col, 0x002);		// ³ì»ö	
