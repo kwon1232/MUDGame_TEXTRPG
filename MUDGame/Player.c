@@ -42,28 +42,26 @@ void playerInitialization(Player* player)
 	{
 	case Wizard:
 	{
-		//player->SkillPoint = 0;
 		playerWizardSkillInitial(player, player->SkillPoint);
 	}
 	break;
 	case Warrior:
 	{
-		//player->SkillPoint = 0;
 		playerWarriorSkillInitial(player, player->SkillPoint);
 	}
 	break;
 	case Archer:
 	{
-		//player->SkillPoint = 0;
 		playerArcherSkillInitial(player, player->SkillPoint);
 	}
 	break;
 	case None:
 	{
-		//player->SkillPoint = 0;
+		player->SkillPoint = 0;
 		playerWizardSkillInitial(player, player->SkillPoint);
 		playerWarriorSkillInitial(player, player->SkillPoint);
 		playerArcherSkillInitial(player, player->SkillPoint);
+		player->JobStepType = None;
 	}
 	}
 }

@@ -1,13 +1,23 @@
 #include "Framework.h"
 
-typedef struct DUNGEON
+void shuffleArray(int array[], int size)
 {
+}
 
-}Dungeon;
-
-typedef struct MAP
+int inRange(int y, int x)
 {
-	struct 
-}map;
+	return 0;
+}
 
-typedef MAP Map;
+void generateMap(int y, int x, int map[MAP_HEIGHT][MAP_WIDTH])
+{
+}
+
+COORD getRandomStartingPoint()
+{
+	//return COORD();
+}
+
+void CreateDungeonMap()
+{
+}

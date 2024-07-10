@@ -43,6 +43,12 @@
     <ClCompile Include="Map.c">
       <Filter>private\Map</Filter>
     </ClCompile>
+    <ClCompile Include="Dungeon.c">
+      <Filter>private\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Village.c">
+      <Filter>private\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -67,6 +73,12 @@
       <Filter>Public</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">
+      <Filter>Public\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Dungeon.h">
+      <Filter>Public\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Village.h">
       <Filter>Public\Map</Filter>
     </ClInclude>
   </ItemGroup>

@@ -79,9 +79,11 @@ enum CharacterJobType
 
 enum CharacterJobStepType
 {
+	None,
 	Default,
 	Beginner,
-	Intermediate
+	Intermediate,
+	All
 };
 
 typedef struct CHARACTERJOBSKILL
@@ -141,11 +143,23 @@ void playerInventoryInitial(Player* player);
 
 
 // Wizard
-void playerWizardSkillInitial(Player* player, int SkillPoint);
+int playerWizardSkillInitial(Player* player, int SkillPoint);
+
+int playerWizardDefaultSkillInitial(Player* player, int SkillPoint);
+int playerWizardBeginnerSkillInitial(Player* player, int SkillPoint);
+int playerWizardIntermediateSkillInitial(Player* player, int SkillPoint);
 
 // Warrior
-void playerWarriorSkillInitial(Player* player, int SkillPoint);
+int playerWarriorSkillInitial(Player* player, int SkillPoint);
+
+int playerWarriorDefaultSkillInitial(Player* player, int SkillPoint);
+int playerWarriorBeginnerSkillInitial(Player* player, int SkillPoint);
+int playerWarriorIntermediateSkillInitial(Player* player, int SkillPoint);
 
 // Archer
-void playerArcherSkillInitial(Player* player, int SkillPoint);
+int playerArcherSkillInitial(Player* player, int SkillPoint);
+
+int playerArcherDefaultSkillInitial(Player* player, int SkillPoint);
+int playerArcherBeginnerSkillInitial(Player* player, int SkillPoint);
+int playerArcherIntermediateSkillInitial(Player* player, int SkillPoint);
 

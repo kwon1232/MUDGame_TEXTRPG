@@ -1,6 +1,10 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS 
 
+//Dungeon
+#define MAP_WIDTH 51
+#define MAP_HEIGHT 31
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -18,4 +22,6 @@
 #include "Player.h"
 #include "PlayerSkill.h"
 
+#include "Dungeon.h"
 #include "Map.h"
+#include "Village.h"

@@ -127,14 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Dungeon.c" />
     <ClCompile Include="Intro.c" />
     <ClCompile Include="Map.c" />
     <ClCompile Include="MUDGame.c" />
     <ClCompile Include="Player.c" />
     <ClCompile Include="PlayerSkill.c" />
+    <ClCompile Include="Village.c" />
     <ClCompile Include="WinAPIControl.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Dungeon.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="Framework.h" />
     <ClInclude Include="Intro.h" />
@@ -142,6 +145,7 @@
     <ClInclude Include="MUDGame.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerSkill.h" />
+    <ClInclude Include="Village.h" />
     <ClInclude Include="WinAPIControl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
