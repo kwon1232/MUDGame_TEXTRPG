@@ -105,14 +105,14 @@ void TrainingCenterIntro(_Village* village, Player* player)
             MPTrainingCenter(player);
             player->TrainingCenterCount--;
         }
-        else if (InputValue == 3 && player->TrainingCenterCount > 0)
+        else if (InputValue == 3 && player->SkillPoint > 0)
         {
             village->TrainingCenterType = ESkillTrainingCenter;
             system("cls");
             printf("\n스킬훈련장에 입장하셨습니다.\n");
             Sleep(200);
             SkillTrainingCenter(player);
-            player->TrainingCenterCount--;
+            player->SkillPoint--;
         }
         else if (InputValue == 4 && player->TrainingCenterCount > 0)
         {
@@ -147,7 +147,7 @@ void HPTrainingCenter(Player* player)
     {
         system("cls");
         printf("%.2f%%완료\n", (double)(start_time / 1) * 100);
-        Sleep(10);
+        Sleep(100);
         system("cls");
         if ((double)(start_time / 1) * 100 >= 100)
             break;
@@ -172,7 +172,7 @@ void MPTrainingCenter(Player* player)
     {
         system("cls");
         printf("%.2f%%완료\n", (double)(start_time / 1) * 100);
-        Sleep(10);
+        Sleep(100);
         system("cls");
         if ((double)(start_time / 1) * 100 >= 100)
             break;
@@ -197,7 +197,7 @@ void SkillTrainingCenter(Player* player)
     {
         system("cls");
         printf("%.2f%%완료\n", (double)(start_time / 1) * 100);
-        Sleep(10);
+        Sleep(100);
         system("cls");
         if ((double)(start_time / 1) * 100 >= 100)
             break;
@@ -247,15 +247,10 @@ void QuestIntro(_Village* village, Player* player)
         char line[256];
         int foundQ_N1 = 0;
 
-       
+        fp = fopen("../data/QuestList", "r");
         int NumOfQuestList = rand() % 1 + 1;
         printf("\n\n현재 준비된 퀘스트는 %d개 있습니다.\n", NumOfQuestList);
-        
-        if (fp == NULL)
-        {
-            printf("퀘스트 파일을 읽어오지 못했습니다 ! \n");
-            exit(EXIT_FAILURE);
-        }
+
 
         switch (player->JobStepType)
         {
@@ -263,28 +258,19 @@ void QuestIntro(_Village* village, Player* player)
         {
             switch (NumOfQuestList)
             {
-            case 1:
-                while (fgets(line, sizeof(line), fp) != NULL)
-                {
-                    if (strstr(line, "Q.N-1") != NULL)
-                    {
-                        printf("%s", line);
-                        if (strstr(line, "Q.END") != NULL)  break;
-                    }
-                }
-
-                fclose(fp);
             case 2:
-                while (fgets(line, sizeof(line), fp) != NULL)
-                {
-                    if (strstr(line, "Q.N-2") != NULL)
-                    {
-                        printf("%s", line);
-                        if (strstr(line, "Q.END") != NULL)  break;
-                    }
-                }
-                fclose(fp);
+                printf("Q.N-2\n");
+                printf("오솔길 던전의 몬스터가 떨어트리는 나무가지 3개를 가져와주세요.\n");
+                printf("몬스터에게서 나오는 나뭇가지는 집을 보수하기 좋아요.\n\n");
+                printf("목표 : 오솔길 던전의 스텀프를 처지하여 나뭇가지 3개 구하기\n");
+                printf("보상 : 50골드, 체력 포션 5개\n");
 
+            case 1:
+                printf("Q.N-1\n");
+                printf("엑스텀프를 잡아와주세요.\n");
+                printf("엑스텀프가 돌아다니는 통에 최근에 마을 밖으로 나간 적이 없어요.\n\n");
+                printf("목표 : 오솔길 던전의 엑스텀프 3마리 잡기\n");
+                printf("보상 : 50골드, 체력 포션 5개\n");
                 break;
             }
         }
@@ -293,27 +279,20 @@ void QuestIntro(_Village* village, Player* player)
         {
             switch (NumOfQuestList)
             {
-            case 1:
-                while (fgets(line, sizeof(line), fp) != NULL)
-                {
-                    if (strstr(line, "Q.D-1") != NULL)
-                    {
-                        printf("%s", line);
-                        if (strstr(line, "Q.END") != NULL)  break;
-                    }
-                }
-
-                fclose(fp);
             case 2:
-                while (fgets(line, sizeof(line), fp) != NULL)
-                {
-                    if (strstr(line, "Q.D-2") != NULL)
-                    {
-                        printf("%s", line);
-                        if (strstr(line, "Q.END") != NULL)  break;
-                    }
-                }
-                fclose(fp);
+                printf("Q.D - 2\n");
+                printf("타락한 나무 정령을 무찔러주세요!\n");
+                printf("타락한 나무 정령들 때문에 오솔길 밖으로 나갈 수 없어요.\n\n");
+                printf("목표 : 깊은 숲 속의 타락한 나무 정령 3마리 처지하기\n");
+                printf("보상 : 80골드, 마나 포션 3개, 체력 포션 3개\n");
+                
+            case 1:
+                printf("Q.D - 1\n");
+                printf("다크 스텀프를 잡아주세요.\n");
+                printf("다크 스텀프는 오솔길을 장악하는 보스입니다.\n");
+                printf("다크 스텀프 때문에 옆마을로 넘어갈 수 없어요!\n\n");
+                printf("목표 : 오솔길 던전의 다크 스텀프 무찌르기\n");
+                printf("보상 : 80골드, 마나 포션 3개, 체력 포션 3개\n");
 
                 break;
             }
@@ -323,28 +302,23 @@ void QuestIntro(_Village* village, Player* player)
         {
             switch (NumOfQuestList)
             {
-            case 1:
-                while (fgets(line, sizeof(line), fp) != NULL)
-                {
-                    if (strstr(line, "Q.B-1") != NULL)
-                    {
-                        printf("%s", line);
-                        if (strstr(line, "Q.END") != NULL)  break;
-                    }
-                }
-
-                fclose(fp);
             case 2:
-                while (fgets(line, sizeof(line), fp) != NULL)
-                {
-                    if (strstr(line, "Q.B-2") != NULL)
-                    {
-                        printf("%s", line);
-                        if (strstr(line, "Q.END") != NULL)  break;
-                    }
-                }
-                fclose(fp);
 
+                printf("Q.B - 2\n");
+                printf("얕은 늪에는 현혹된 악어 다일이 살고있어\n");
+                printf("다일은 늪 속에서 살기 때문에 내가 직접 잡기엔 너무 어려워\n");
+                printf("혹시 너가 도와주겠니 ?\n\n");
+                printf("    목표 : 다일 3마리 처지하기\n");
+                printf("보상 : 110골드마나 포션 4개, 체력 포션 4개\n");
+
+
+            case 1:
+                printf("Q.B - 1\n");
+                printf("깊은 숲 속에 나무 정령들을 타락시킨건\n");
+                printf("셰이드라는 악령 때문이라던데,\n");
+                printf("셰이드를 처치해줄 수 있나요 ?\n\n");
+                printf("목표 : 셰이드 3마리 처지하기\n");
+                printf("보상 : 110골드, 마나 포션 4개, 체력 포션 4개\n");
                 break;
             }
         }
@@ -353,27 +327,23 @@ void QuestIntro(_Village* village, Player* player)
         {
             switch (NumOfQuestList)
             {
-            case 1:
-                while (fgets(line, sizeof(line), fp) != NULL)
-                {
-                    if (strstr(line, "Q.I-1") != NULL)
-                    {
-                        printf("%s", line);
-                        if (strstr(line, "Q.END") != NULL)  break;
-                    }
-                }
-
-                fclose(fp);
             case 2:
-                while (fgets(line, sizeof(line), fp) != NULL)
-                {
-                    if (strstr(line, "Q.I-2") != NULL)
-                    {
-                        printf("%s", line);
-                        if (strstr(line, "Q.END") != NULL)  break;
-                    }
-                }
-                fclose(fp);
+                printf("Q.I - 2\n");
+                printf("얕은 늪에는 디노가 살고있지,\n");
+                printf("근데 그거 알아 ?\n");
+                printf("디노를 처지해주면 조금 평화롭지 않을까 ?\n\n");
+
+                printf("목표 : 보스 몬스터 디노 처지하기\n");
+                printf("보상 : 280골드, 마나 포션 4개, 체력 포션 4개\n");
+
+            case 1:
+                printf("Q.I - 1\n");
+                printf("얕은 늪에는 다일이 살고있다는 거 너도 알고있지 ?\n");
+                printf("다일 또는 디노를 처치하면 에메랄드를 구할 수 있다는 소문이 돌아...\n");
+                printf("보석상에서 디노를 처치한 에메랄드를 가져오면 개당 100골드나 준다네!\n\n");
+
+                printf("목표 : 디노 또는 다일을 처치해서 에메랄드 2개 구해오기\n");
+                printf("보상 : 200골드, 마나 포션 4개, 체력 포션 4개\n");
 
                 break;
             }
