@@ -12,13 +12,18 @@ int main()
 
 	int mouse_x = 0, mouse_y = 0, keyCode = 0;
 	Player player;
-	player.PlayerJobType = None;
+	playerInitialization(&player);
+
+	_Village VillageMap[3];
+	_Dungeon DungeonMap[3];
+
+	MapInitialization(VillageMap, DungeonMap);
 	while (true)
 	{
 		GaneStarOrGameEixt(&keyCode);
-
 		if (keyCode == 2) return;
 		SelectPlayerJob(keyCode, &player);
+		VillageIntro(&VillageMap[0], &player);
 	}
 	
 

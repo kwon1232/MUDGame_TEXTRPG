@@ -16,12 +16,14 @@
 #include <consoleapi2.h>
 #include <consoleapi3.h>
 
+#include "Player.h"
+#include "Intro.h"
+
 #include "WinAPIControl.h"
 #include "enums.h"
 
-#include "Player.h"
 #include "PlayerSkill.h"
 
-#include "Dungeon.h"
 #include "Map.h"
+#include "Dungeon.h"
 #include "Village.h"

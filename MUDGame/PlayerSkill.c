@@ -8,25 +8,25 @@ int playerWizardSkillInitial(Player* player, int SkillPoint)
 
 	switch (player->JobStepType)
 	{
-	case Default:
+	case EDefault:
 	{
 		tempSkillPoint = 0;
 		tempSkillPoint += playerWizardDefaultSkillInitial(player, SkillPoint);
 	}
 	break;
-	case Beginner:
+	case EBeginner:
 	{
 		tempSkillPoint = 0;
 		tempSkillPoint += playerWizardBeginnerSkillInitial(player, SkillPoint);
 	}
 	break;
-	case Intermediate:
+	case EIntermediate:
 	{
 		tempSkillPoint = 0;
 		tempSkillPoint += playerWizardIntermediateSkillInitial(player, SkillPoint);
 	}
 		break;
-	case All:
+	case EAll:
 		tempSkillPoint = 0;
 		tempSkillPoint += playerWizardDefaultSkillInitial(player, SkillPoint);
 		tempSkillPoint += playerWizardBeginnerSkillInitial(player, SkillPoint);
@@ -113,25 +113,25 @@ int playerWarriorSkillInitial(Player* player, int SkillPoint)
 	int tempSkillPoint = 0;
 	switch (player->JobStepType)
 	{
-	case Default:
+	case EDefault:
 	{
 		tempSkillPoint = 0;
 		tempSkillPoint += playerWarriorDefaultSkillInitial(player, SkillPoint);
 	}
 	break;
-	case Beginner:
+	case EBeginner:
 	{
 		tempSkillPoint = 0;
 		tempSkillPoint += playerWarriorBeginnerSkillInitial(player, SkillPoint);
 	}
 	break;
-	case Intermediate:
+	case EIntermediate:
 	{
 		tempSkillPoint = 0;
 		tempSkillPoint += playerWarriorIntermediateSkillInitial(player, SkillPoint);
 	}
 	break;
-	case All:
+	case EAll:
 		tempSkillPoint = 0;
 		tempSkillPoint += playerWarriorDefaultSkillInitial(player, SkillPoint);
 		tempSkillPoint += playerWarriorBeginnerSkillInitial(player, SkillPoint);
@@ -219,25 +219,25 @@ int playerArcherSkillInitial(Player* player, int SkillPoint)
 	int tempSkillPoint = 0;
 	switch (player->JobStepType)
 	{
-	case Default:
+	case EDefault:
 	{
 		tempSkillPoint = 0;
 		tempSkillPoint += playerArcherDefaultSkillInitial(player, SkillPoint);
 	}
 	break;
-	case Beginner:
+	case EBeginner:
 	{
 		tempSkillPoint = 0;
 		tempSkillPoint += playerArcherBeginnerSkillInitial(player, SkillPoint);
 	}
 	break;
-	case Intermediate:
+	case EIntermediate:
 	{
 		tempSkillPoint = 0;
 		tempSkillPoint += playerArcherIntermediateSkillInitial(player, SkillPoint);
 	}
 	break;
-	case All:
+	case EAll:
 		tempSkillPoint = 0;
 		tempSkillPoint += playerArcherDefaultSkillInitial(player, SkillPoint);
 		tempSkillPoint += playerArcherBeginnerSkillInitial(player, SkillPoint);

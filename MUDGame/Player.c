@@ -37,31 +37,33 @@ void playerInitialization(Player* player)
 {
 	playerInventoryInitial(player);
 	player->SkillPoint = 3;
+	player->JobStepType = ENone_JobType;
+	player->Level = 1;
+	player->TrainingCenterCount = 5;
 
 	switch (player->PlayerJobType)
 	{
-	case Wizard:
+	case EWizard:
 	{
 		playerWizardSkillInitial(player, player->SkillPoint);
 	}
 	break;
-	case Warrior:
+	case EWarrior:
 	{
 		playerWarriorSkillInitial(player, player->SkillPoint);
 	}
 	break;
-	case Archer:
+	case EArcher:
 	{
 		playerArcherSkillInitial(player, player->SkillPoint);
 	}
 	break;
-	case None:
+	case ENone_JobType:
 	{
 		player->SkillPoint = 0;
 		playerWizardSkillInitial(player, player->SkillPoint);
 		playerWarriorSkillInitial(player, player->SkillPoint);
 		playerArcherSkillInitial(player, player->SkillPoint);
-		player->JobStepType = None;
 	}
 	}
 }
@@ -73,4 +75,6 @@ void playerInventoryInitial(Player* player)
 	player->PInventory.HPpotion = 0;
 	player->PInventory.MPpotion = 0;
 	player->PInventory.wood = 0;
+	player->PInventory.MaxOwnItem = 20;
+	player->PInventory.MaxOwnPotion = 20;
 }

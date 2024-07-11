@@ -1,3 +1,2 @@
-﻿  MUDGame.c
-C:\Users\ebs12\OneDrive\바탕 화면\programming\Inha\MUDGame\MUDGame\MUDGame.c(9,8): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  MUDGame.vcxproj -> C:\Users\ebs12\OneDrive\바탕 화면\programming\Inha\MUDGame\x64\Debug\MUDGame.exe
+﻿  Village.c
+  MUDGame.vcxproj -> D:\PROJECT\C_C++\MUDGame_TEXTRPG\x64\Debug\MUDGame.exe

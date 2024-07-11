@@ -25,12 +25,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Player.c">
-      <Filter>private</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerSkill.c">
-      <Filter>private</Filter>
-    </ClCompile>
     <ClCompile Include="Intro.c">
       <Filter>private</Filter>
     </ClCompile>
@@ -40,13 +34,19 @@
     <ClCompile Include="WinAPIControl.c">
       <Filter>private</Filter>
     </ClCompile>
-    <ClCompile Include="Map.c">
-      <Filter>private\Map</Filter>
-    </ClCompile>
     <ClCompile Include="Dungeon.c">
       <Filter>private\Map</Filter>
     </ClCompile>
     <ClCompile Include="Village.c">
+      <Filter>private\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.c">
+      <Filter>private\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerSkill.c">
+      <Filter>private\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.c">
       <Filter>private\Map</Filter>
     </ClCompile>
   </ItemGroup>
@@ -72,13 +72,13 @@
     <ClInclude Include="WinAPIControl.h">
       <Filter>Public</Filter>
     </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Public\Map</Filter>
-    </ClInclude>
     <ClInclude Include="Dungeon.h">
       <Filter>Public\Map</Filter>
     </ClInclude>
     <ClInclude Include="Village.h">
+      <Filter>Public\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
       <Filter>Public\Map</Filter>
     </ClInclude>
   </ItemGroup>

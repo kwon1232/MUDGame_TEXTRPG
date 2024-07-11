@@ -71,19 +71,19 @@ typedef struct INTERMEDIATETARCHERSKILL
 
 enum CharacterJobType
 {
-	None = 0,
-	Wizard = 1,
-	Warrior = 2,
-	Archer = 3,
+	ENone_JobType = 0,
+	EWizard = 1,
+	EWarrior = 2,
+	EArcher = 3,
 };
 
 enum CharacterJobStepType
 {
-	None,
-	Default,
-	Beginner,
-	Intermediate,
-	All
+	ENone_JobStepType,
+	EDefault,
+	EBeginner,
+	EIntermediate,
+	EAll
 };
 
 typedef struct CHARACTERJOBSKILL
@@ -114,7 +114,6 @@ typedef struct INVENTORY
 
 typedef struct PLAYER
 {
-
 	char PlayerJobName[60];
 	char PlayerName[120];
 	Inventory PInventory;
@@ -122,11 +121,13 @@ typedef struct PLAYER
 	CharacterJobSkill JobSkillList;
 	enum CharacterJobStepType JobStepType;
 	enum CharacterJobType PlayerJobType;
-	double Hp;
-	double Mp;
+	int Hp;
+	int Mp;
 	int Attack;
 	int Quickness;
 	int SkillPoint;
+	int Level;
+	int TrainingCenterCount;
 }Player;
 
 // 전체 맵 초기화 

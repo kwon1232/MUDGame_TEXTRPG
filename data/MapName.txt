@@ -1,0 +1,12 @@
+EVillage1
+숲 속 마을
+EVillage2
+울창한 숲 속 마을
+EVillage2
+얕은 바닷가 마을
+EDungeon1
+오솔길 던전
+EDungeon2
+숲 속 늪지대 던전
+EDungeon1
+얕은 해변가 던전
