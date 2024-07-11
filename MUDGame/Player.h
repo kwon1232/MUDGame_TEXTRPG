@@ -112,6 +112,13 @@ typedef struct INVENTORY
 	int emerald;
 }Inventory;
 
+typedef struct P_QUEST
+{
+	bool CheckCompleteQuestList[QuestListCount];
+	bool CheckAcceptQuestList[QuestListCount];
+	char QuestListStr[QuestListCount][40];
+}_P_Quest;
+
 typedef struct PLAYER
 {
 	char PlayerJobName[60];
@@ -121,6 +128,7 @@ typedef struct PLAYER
 	CharacterJobSkill JobSkillList;
 	enum CharacterJobStepType JobStepType;
 	enum CharacterJobType PlayerJobType;
+	_P_Quest P_Quest;
 	int Hp;
 	int Mp;
 	int Attack;
@@ -141,6 +149,7 @@ void playerInitialization(Player* player);
 
 void playerInventoryInitial(Player* player);
 
+void playerQuestListInitial(Player* player);
 
 
 // Wizard

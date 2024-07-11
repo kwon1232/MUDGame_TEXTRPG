@@ -43,4 +43,3 @@ void MapInitialization(struct VILLAGE VillageMap[3], struct DUNGEON DungeonMap[3
 	}
 
 }
-

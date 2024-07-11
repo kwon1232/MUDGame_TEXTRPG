@@ -7,7 +7,6 @@
 int main()
 {
 	SetConsoleTitle(TEXT("TEXTRPG"));
-	system("mode con:cols=150 lines=50");
 	srand(time(NULL));
 
 	int mouse_x = 0, mouse_y = 0, keyCode = 0;
@@ -20,6 +19,8 @@ int main()
 	MapInitialization(VillageMap, DungeonMap);
 	while (true)
 	{
+		PrintIntroMenu();
+		system("mode con:cols=100 lines=25");
 		GaneStarOrGameEixt(&keyCode);
 		if (keyCode == 2) return;
 		SelectPlayerJob(keyCode, &player);

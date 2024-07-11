@@ -41,6 +41,8 @@ void playerInitialization(Player* player)
 	player->Level = 1;
 	player->TrainingCenterCount = 5;
 
+	playerQuestListInitial(player);
+
 	switch (player->PlayerJobType)
 	{
 	case EWizard:
@@ -77,4 +79,21 @@ void playerInventoryInitial(Player* player)
 	player->PInventory.wood = 0;
 	player->PInventory.MaxOwnItem = 20;
 	player->PInventory.MaxOwnPotion = 20;
+}
+
+void playerQuestListInitial(Player* player)
+{
+	for (int i = 0; i < QuestListCount; i++)
+	{
+		player->P_Quest.CheckCompleteQuestList[i] = false;
+		player->P_Quest.CheckAcceptQuestList[i] = false;
+	}
+	strcpy(player->P_Quest.QuestListStr[0], "Q.N-1");
+	strcpy(player->P_Quest.QuestListStr[1], "Q.N-2");
+	strcpy(player->P_Quest.QuestListStr[2], "Q.D-1");
+	strcpy(player->P_Quest.QuestListStr[3], "Q.D-2");
+	strcpy(player->P_Quest.QuestListStr[4], "Q.B-1");
+	strcpy(player->P_Quest.QuestListStr[5], "Q.B-2");
+	strcpy(player->P_Quest.QuestListStr[6], "Q.I-1");
+	strcpy(player->P_Quest.QuestListStr[7], "Q.I-2");
 }

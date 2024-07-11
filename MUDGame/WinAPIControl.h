@@ -11,12 +11,12 @@ typedef struct VECTOR2
 typedef vector2 Vector2;
 
 
+void SetColor(int color);
+
 void CursorView(char show);
 
-// 커서 위치를 x y로 변경하는 함수
-void GotoXY(int x, int y);
-
-int ControlKey();
+void gotoxy(int x, int y);
 
 COORD GetXY();
 
+void PrintIntroMenu();

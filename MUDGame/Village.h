@@ -61,6 +61,7 @@ void SkillTrainingCenter(Player* player);
 void QuicknessTrainingCenter(Player* player);
 
 void QuestIntro(_Village* village, Player* player);
+bool QuestAccept(_Village* village, Player* player, char QuestNum[]);
 
 void StoreIntro(_Village* village, Player* player);
 

@@ -147,7 +147,7 @@ void HPTrainingCenter(Player* player)
     {
         system("cls");
         printf("%.2f%%완료\n", (double)(start_time / 1) * 100);
-        Sleep(100);
+        Sleep(500);
         system("cls");
         if ((double)(start_time / 1) * 100 >= 100)
             break;
@@ -172,7 +172,7 @@ void MPTrainingCenter(Player* player)
     {
         system("cls");
         printf("%.2f%%완료\n", (double)(start_time / 1) * 100);
-        Sleep(100);
+        Sleep(500);
         system("cls");
         if ((double)(start_time / 1) * 100 >= 100)
             break;
@@ -197,7 +197,7 @@ void SkillTrainingCenter(Player* player)
     {
         system("cls");
         printf("%.2f%%완료\n", (double)(start_time / 1) * 100);
-        Sleep(100);
+        Sleep(500);
         system("cls");
         if ((double)(start_time / 1) * 100 >= 100)
             break;
@@ -206,7 +206,7 @@ void SkillTrainingCenter(Player* player)
     printf("\n%s의 스킬 포인트가 증가하였습니다!\n", player->PlayerName);
     printf("\n훈련 전 스킬 포인트 : %d", player->SkillPoint);
     player->SkillPoint++;
-    printf("\n훈련 후 스킬 숙련도 : %d", player->SkillPoint);
+    printf("\n훈련 후 스킬 포인트 : %d", player->SkillPoint);
     Sleep(1200);
     system("cls");
 }
@@ -222,7 +222,7 @@ void QuicknessTrainingCenter(Player* player)
     {
         system("cls");
         printf("%.2f%%완료\n", (double)(start_time / 1) * 100);
-        Sleep(10);
+        Sleep(500);
         system("cls");
         if ((double)(start_time / 1) * 100 >= 100)
             break;
@@ -240,18 +240,14 @@ void QuicknessTrainingCenter(Player* player)
 void QuestIntro(_Village* village, Player* player)
 {
     int InputValue = 0;
+    char QuestNum[40];
 
     while (true)
     {
-        FILE* fp;
-        char line[256];
-        int foundQ_N1 = 0;
-
-        fp = fopen("../data/QuestList", "r");
+        system("cls");
         int NumOfQuestList = rand() % 1 + 1;
         printf("\n\n현재 준비된 퀘스트는 %d개 있습니다.\n", NumOfQuestList);
-
-
+        Sleep(1000);
         switch (player->JobStepType)
         {
         case ENone_JobStepType:
@@ -259,14 +255,14 @@ void QuestIntro(_Village* village, Player* player)
             switch (NumOfQuestList)
             {
             case 2:
-                printf("Q.N-2\n");
+                printf("퀘스트 넘버 : Q.N-2\n\n");
                 printf("오솔길 던전의 몬스터가 떨어트리는 나무가지 3개를 가져와주세요.\n");
                 printf("몬스터에게서 나오는 나뭇가지는 집을 보수하기 좋아요.\n\n");
                 printf("목표 : 오솔길 던전의 스텀프를 처지하여 나뭇가지 3개 구하기\n");
                 printf("보상 : 50골드, 체력 포션 5개\n");
 
             case 1:
-                printf("Q.N-1\n");
+                printf("퀘스트 넘버 : Q.N-1\n\n");
                 printf("엑스텀프를 잡아와주세요.\n");
                 printf("엑스텀프가 돌아다니는 통에 최근에 마을 밖으로 나간 적이 없어요.\n\n");
                 printf("목표 : 오솔길 던전의 엑스텀프 3마리 잡기\n");
@@ -280,14 +276,14 @@ void QuestIntro(_Village* village, Player* player)
             switch (NumOfQuestList)
             {
             case 2:
-                printf("Q.D - 2\n");
+                printf("퀘스트 넘버 : Q.D - 2\n\n");
                 printf("타락한 나무 정령을 무찔러주세요!\n");
                 printf("타락한 나무 정령들 때문에 오솔길 밖으로 나갈 수 없어요.\n\n");
                 printf("목표 : 깊은 숲 속의 타락한 나무 정령 3마리 처지하기\n");
                 printf("보상 : 80골드, 마나 포션 3개, 체력 포션 3개\n");
                 
             case 1:
-                printf("Q.D - 1\n");
+                printf("퀘스트 넘버 : Q.D - 1\n\n");
                 printf("다크 스텀프를 잡아주세요.\n");
                 printf("다크 스텀프는 오솔길을 장악하는 보스입니다.\n");
                 printf("다크 스텀프 때문에 옆마을로 넘어갈 수 없어요!\n\n");
@@ -304,7 +300,7 @@ void QuestIntro(_Village* village, Player* player)
             {
             case 2:
 
-                printf("Q.B - 2\n");
+                printf("퀘스트 넘버 : Q.B - 2\n\n");
                 printf("얕은 늪에는 현혹된 악어 다일이 살고있어\n");
                 printf("다일은 늪 속에서 살기 때문에 내가 직접 잡기엔 너무 어려워\n");
                 printf("혹시 너가 도와주겠니 ?\n\n");
@@ -313,7 +309,7 @@ void QuestIntro(_Village* village, Player* player)
 
 
             case 1:
-                printf("Q.B - 1\n");
+                printf("퀘스트 넘버 : Q.B - 1\n\n");
                 printf("깊은 숲 속에 나무 정령들을 타락시킨건\n");
                 printf("셰이드라는 악령 때문이라던데,\n");
                 printf("셰이드를 처치해줄 수 있나요 ?\n\n");
@@ -328,7 +324,7 @@ void QuestIntro(_Village* village, Player* player)
             switch (NumOfQuestList)
             {
             case 2:
-                printf("Q.I - 2\n");
+                printf("퀘스트 넘버 : Q.I - 2\n\n");
                 printf("얕은 늪에는 디노가 살고있지,\n");
                 printf("근데 그거 알아 ?\n");
                 printf("디노를 처지해주면 조금 평화롭지 않을까 ?\n\n");
@@ -337,7 +333,7 @@ void QuestIntro(_Village* village, Player* player)
                 printf("보상 : 280골드, 마나 포션 4개, 체력 포션 4개\n");
 
             case 1:
-                printf("Q.I - 1\n");
+                printf("퀘스트 넘버 : Q.I - 1\n\n");
                 printf("얕은 늪에는 다일이 살고있다는 거 너도 알고있지 ?\n");
                 printf("다일 또는 디노를 처치하면 에메랄드를 구할 수 있다는 소문이 돌아...\n");
                 printf("보석상에서 디노를 처치한 에메랄드를 가져오면 개당 100골드나 준다네!\n\n");
@@ -350,8 +346,44 @@ void QuestIntro(_Village* village, Player* player)
         }
             break;
         }
+        printf("\n\n퀘스트를 수락하시겠습니까?\n");
+        printf("1. 수락\n2. 거절\n");
+        scanf("%d", &InputValue);
+        if (InputValue == 2) 
+        { 
+            system("cls");
+            VillageMainScene(village, player);
+            break;
+        }
+        printf("\n\n받아올 퀘스트 넘버를 입력해주세요 : ");
+        scanf("%s", &QuestNum);
+        if (QuestAccept(village, player, QuestNum))
+        {
+            printf("\n\n퀘스트를 수락했습니다!");
+            Sleep(1000);
+            system("cls");
+            VillageMainScene(village, player);
+            break;
+        }
+        else
+        {
+            printf("\n\n이미 수락한 퀘스트입니다!");
+            Sleep(1000);
+            system("cls");
+            VillageMainScene(village, player);
+            break;
+        }
+    }
+}
 
-
+bool QuestAccept(_Village* village, Player* player, char QuestNum[])
+{
+    for (int i = 0; i < QuestListCount; i++)
+    {
+        if (strcmp(player->P_Quest.QuestListStr[i], QuestNum) == 0)
+        {
+            player->P_Quest.CheckAcceptQuestList[i] = true;
+        }
     }
 }
 
@@ -387,18 +419,20 @@ void StoreIntro(_Village* village, Player* player)
                 printf("\n\n골드가 부족해서 구매할 수 없습니다!\n");
                 printf("체력 포션의 가격은 50골드입니다!\n\n");
                 printf("현재 %s의 총 골드 : %d", player->PlayerName, player->PInventory.gold);
+                Sleep(1200);
                 printf("\n메뉴로 돌아갑니다!\n");
-                Sleep(200);
+                Sleep(1200);
                 system("cls");
             }
 
-            else if (player->PInventory.HPpotion <= player->PInventory.MaxOwnPotion)
+            else if (player->PInventory.HPpotion >= player->PInventory.MaxOwnPotion)
             {
                 system("cls");
                 printf("\n\n소지할 수 있는 체력 포션 수가 다 찼습니다!\n구매할 수 없습니다!\n");
                 printf("현재 포션 갯수 : %d / %d\n", player->PInventory.HPpotion, player->PInventory.MaxOwnPotion);
+                Sleep(1200);
                 printf("\n메뉴로 돌아갑니다!\n");
-                Sleep(200);
+                Sleep(1200);
                 system("cls");
             }
 
@@ -413,7 +447,9 @@ void StoreIntro(_Village* village, Player* player)
                 printf("구매 전 포션 갯수 : %d / %d\n", player->PInventory.HPpotion, player->PInventory.MaxOwnPotion);
                 player->PInventory.HPpotion++;
                 printf("구매 후 포션 갯수 : %d / %dn", player->PInventory.HPpotion, player->PInventory.MaxOwnPotion);
-                Sleep(200);
+                Sleep(1200);
+                printf("\n메뉴로 돌아갑니다!\n");
+                Sleep(1200);
                 system("cls");
             }
         }
@@ -427,18 +463,20 @@ void StoreIntro(_Village* village, Player* player)
                 printf("\n\n골드가 부족해서 구매할 수 없습니다!\n");
                 printf("마력 포션의 가격은 50골드입니다!\n\n");
                 printf("현재 %s의 총 골드 : %d", player->PlayerName, player->PInventory.gold);
+                Sleep(1200);
                 printf("\n메뉴로 돌아갑니다!\n");
-                Sleep(200);
+                Sleep(1200);
                 system("cls");
             }
 
-            if (player->PInventory.MPpotion <= player->PInventory.MaxOwnPotion)
+            if (player->PInventory.MPpotion >= player->PInventory.MaxOwnPotion)
             {
                 system("cls");
                 printf("\n\n소지할 수 있는 마력 포션 수가 다 찼습니다!\n구매할 수 없습니다!\n");
                 printf("현재 포션 갯수 : %d / %d\n", player->PInventory.MPpotion, player->PInventory.MaxOwnPotion);
+                Sleep(1200);
                 printf("\n메뉴로 돌아갑니다!\n");
-                Sleep(200);
+                Sleep(1200);
                 system("cls");
             }
 
@@ -453,10 +491,9 @@ void StoreIntro(_Village* village, Player* player)
                 printf("구매 전 포션 갯수 : %d / %d\n", player->PInventory.MPpotion, player->PInventory.MaxOwnPotion);
                 player->PInventory.HPpotion++;
                 printf("구매 후 포션 갯수 : %d / %d\n", player->PInventory.MPpotion, player->PInventory.MaxOwnPotion);
-                Sleep(200);
-                system("cls");
+                Sleep(1200);
                 printf("\n메뉴로 돌아갑니다!\n");
-                Sleep(200);
+                Sleep(1200);
                 system("cls");
             }
         }
@@ -482,10 +519,9 @@ void StoreIntro(_Village* village, Player* player)
                     printf("판매 후 나뭇가지 갯수 : %d / %d\n", player->PInventory.wood, player->PInventory.MaxOwnItem);
                     player->PInventory.HPpotion++;
                     printf("구매 후 나뭇가지 갯수 : %d / %d\n", player->PInventory.wood, player->PInventory.MaxOwnItem);
-                    Sleep(200);
-                    system("cls");
+                    Sleep(1200);
                     printf("\n메뉴로 돌아갑니다!\n");
-                    Sleep(200);
+                    Sleep(1200);
                     system("cls");
                 }
             }
@@ -501,17 +537,16 @@ void StoreIntro(_Village* village, Player* player)
                     printf("판매 후 에메랄드 갯수 : %d / %d\n", player->PInventory.emerald, player->PInventory.MaxOwnItem);
                     player->PInventory.HPpotion++;
                     printf("구매 후 에메랄드 갯수 : %d / %d\n", player->PInventory.emerald, player->PInventory.MaxOwnItem);
-                    Sleep(200);
-                    system("cls");
+                    Sleep(1200);
                     printf("\n메뉴로 돌아갑니다!\n");
-                    Sleep(200);  
+                    Sleep(1200);
                     system("cls");
                 }
             }
 
-            system("cls");
+
             printf("\n메뉴로 돌아갑니다!\n");
-            Sleep(200);
+            Sleep(700);
             system("cls");
 
         }

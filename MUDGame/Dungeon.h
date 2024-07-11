@@ -30,11 +30,11 @@ void PrintDungeonIntro();
 //const int DIR[4][2] = { {0,-2},{0,2},{-2,0},{2,0} };
 //
 //void shuffleArray(int array[], int size);
-
+//
 //int inRange(int y, int x);
-
-// ±íÀÌ ¿ì¼± Å½»ö ¸Ê Çü¼º
-void generateMap(int y, int x, int map[MAP_HEIGHT][MAP_WIDTH]);
+//
+//// ±íÀÌ ¿ì¼± Å½»ö ¸Ê Çü¼º
+//void generateMap(int y, int x, int map[MAP_HEIGHT][MAP_WIDTH]);
 
 //COORD getRandomStartingPoint();
 
