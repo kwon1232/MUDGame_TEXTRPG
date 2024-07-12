@@ -1,14 +1,14 @@
 #pragma once
 
 
-void GaneStarOrGameEixt(int* input);
+void GaneStarOrGameEixt();
 
-void SelectPlayerJob(int input, Player* player);
+void SelectPlayerJob(Player* player);
 
-void LastSelectPlayerJob(int input, Player* player);
+void LastSelectPlayerJob(Player* player);
 
 void SelectPlayerName(int* input, Player* player);
 
 void SetRandomOfPlayerAbility(Player* player);
 
-void StartAdventure(Player* player);
+void StartAdventure();

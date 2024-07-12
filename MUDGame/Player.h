@@ -112,6 +112,10 @@ typedef struct INVENTORY
 	int emerald;
 }Inventory;
 
+// TODO. 몬스터별로 아이템 드랍하고
+// 몬스터 처치히면 퀘스트 리스트 가져와서
+// 달성 상태 체크해줘야 함
+// 마을로 돌아갔을 때 달성했다면 퀘스트 완료 목록 보이게 로직 짜기
 typedef struct P_QUEST
 {
 	bool CheckCompleteQuestList[QuestListCount];
@@ -172,4 +176,10 @@ int playerArcherSkillInitial(Player* player, int SkillPoint);
 int playerArcherDefaultSkillInitial(Player* player, int SkillPoint);
 int playerArcherBeginnerSkillInitial(Player* player, int SkillPoint);
 int playerArcherIntermediateSkillInitial(Player* player, int SkillPoint);
+
+
+// Player Skill List
+void PlayerSkillListPrint(Player* player);
+
+
 

@@ -1,7 +1,8 @@
 #include "Framework.h"
 
-void SetColor(int color)
+void SetColor(int foreground, int background)
 {
+	int color = foreground + background * 16;
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
 
@@ -45,7 +46,7 @@ void PrintIntroMenu()
 {
 	int POS = 4;	//0 - 새로 하기, 1 - 이어 하기, 2 - 랭킹 보기, 3 - 게임 종료 TEXT RPG
 	CursorView(0);
-	system("COLOR 0F");
+	system("COLOR 5F");
 	system("mode con: cols=110 lines=25");
 	printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 	printf("■                                                                                                          ■");
@@ -81,36 +82,36 @@ void PrintIntroMenu()
 			break;
 		switch (POS) {
 		case 0:
-			SetColor(11);
+			SetColor(11,5);
 			gotoxy(10, 4); printf("새로  하기");
-			SetColor(15);
+			SetColor(15,5);
 			gotoxy(35, 4); printf("이어  하기");
 			gotoxy(60, 4); printf("랭킹  보기");
 			gotoxy(85, 4); printf("게임  종료");
 			break;
 		case 1:
 			gotoxy(10, 4); printf("새로  하기");
-			SetColor(11);
+			SetColor(11, 5);
 			gotoxy(35, 4); printf("이어  하기");
-			SetColor(15);
+			SetColor(15, 5);
 			gotoxy(60, 4); printf("랭킹  보기");
 			gotoxy(85, 4); printf("게임  종료");
 			break;
 		case 2:
 			gotoxy(10, 4); printf("새로  하기");
 			gotoxy(35, 4); printf("이어  하기");
-			SetColor(11);
+			SetColor(11,5);
 			gotoxy(60, 4); printf("랭킹  보기");
-			SetColor(15);
+			SetColor(15,5);
 			gotoxy(85, 4); printf("게임  종료");
 			break;
 		case 3:
 			gotoxy(10, 4); printf("새로  하기");
 			gotoxy(35, 4); printf("이어  하기");
 			gotoxy(60, 4); printf("랭킹  보기");
-			SetColor(11);
+			SetColor(11, 5);
 			gotoxy(85, 4); printf("게임  종료");
-			SetColor(15);
+			SetColor(15, 5);
 			break;
 		default: break;
 		}

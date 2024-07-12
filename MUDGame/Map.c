@@ -2,10 +2,11 @@
 
 void MapInitialization(struct VILLAGE VillageMap[3], struct DUNGEON DungeonMap[3])
 {
-	char villageName[3][120] = {
+	char villageName[4][120] = {
 		"숲 속 마을",
-		"울창한 숲 속 마을",
-		"얕은 바닷가 마을"
+		"달맞이 마을",
+		"해변 마을"
+		"폭포 마을"
 	};
 	char DungeonName[3][120] = {
 		"오솔길 던전",
@@ -19,6 +20,7 @@ void MapInitialization(struct VILLAGE VillageMap[3], struct DUNGEON DungeonMap[3
 		VillageMap[i].Map.MapType = EVillage;
 		DungeonMap[i].Map.MapType = EDungeon;
 	}
+	VillageMap[3].Map.MapType = EVillage;
 
 	for(int idx = 0; idx < 3; idx++)
 	{
@@ -31,6 +33,7 @@ void MapInitialization(struct VILLAGE VillageMap[3], struct DUNGEON DungeonMap[3
 			strcpy(DungeonMap[idx].DungeonName, DungeonName[idx]);
 		}
 	}
+	strcpy(VillageMap[3].VillageName, villageName[3]);
 
 	//for (int i = 0; i < 3; i++) {
 	//	printf("Village %d: %s\n", i + 1, VillageMap[i].VillageName);

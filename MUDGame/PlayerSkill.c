@@ -319,3 +319,37 @@ int playerArcherIntermediateSkillInitial(Player* player, int SkillPoint)
 	return tempSkillPoint;
 }
 
+void PlayerSkillListPrint(Player* player)
+{
+	system("cls");
+	switch (player->PlayerJobType)
+	{
+	case ENone_JobType:
+		printf("\n\n직업이 없기 때문에 스킬도 없습니다!\n");
+		Sleep(1200);
+		system("cls");
+		break;
+	case EWizard:
+		printf("\n\n%s(이)의 직업은 W%s입니다.\n", player->PlayerName, player->PlayerJobName);
+		printf("\n%s의 직업 단계에서 사용 가능한 스킬은 다음과 같습니다\n\n", player->PlayerName);
+		switch (player->JobStepType)
+		{
+		EIntermediate:
+			printf("Intermediate 스킬은 다음과 같습니다\n\n\n");
+			printf("1. FireSpike\n2. ConOfIce");
+
+		EBeginner:
+			printf("Beginner 스킬은 다음과 같습니다\n\n\n");
+			printf("1. FireBeam\n2. AquaBeam\n3. LightingBeam");
+
+		EDefault:
+			printf("Default 스킬은 다음과 같습니다\n\n\n");
+			printf("1. FireBall\n2. SnowBall\n3. LightBall");
+			break;
+		}
+	}
+	Sleep(1200);
+	system("cls");
+}
+
+

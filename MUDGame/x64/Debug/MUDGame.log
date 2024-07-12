@@ -1,12 +1,10 @@
-﻿  Dungeon.c
-  Intro.c
-  MUDGame.c
-D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\MUDGame.c(10,8): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Map.c
-  Player.c
-  PlayerSkill.c
-  Village.c
-  WinAPIControl.c
-  _Monster.c
-  코드를 생성하고 있습니다...
+﻿  Village.c
+D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(21,35): warning C4047: '함수': 'Player *'의 간접 참조 수준이 'Player **'과(와) 다릅니다.
+D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(21,35): warning C4024: 'VillageIntro': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(27,35): warning C4047: '함수': 'Player *'의 간접 참조 수준이 'Player **'과(와) 다릅니다.
+D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(27,35): warning C4024: 'VillageIntro': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(33,35): warning C4047: '함수': 'Player *'의 간접 참조 수준이 'Player **'과(와) 다릅니다.
+D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(33,35): warning C4024: 'VillageIntro': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(39,35): warning C4047: '함수': 'Player *'의 간접 참조 수준이 'Player **'과(와) 다릅니다.
+D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(39,35): warning C4024: 'VillageIntro': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
   MUDGame.vcxproj -> D:\PROJECT\C_C++\MUDGame_TEXTRPG\x64\Debug\MUDGame.exe

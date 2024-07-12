@@ -49,6 +49,7 @@ typedef struct VILLAGE
 	int VillageNum;
 }_Village;
 
+void SellecVillage(_Village village[], Player* player, _Dungeon dungeon[]);
 
 void VillageIntro(_Village* village, Player* player, _Dungeon dungeon[]);
 

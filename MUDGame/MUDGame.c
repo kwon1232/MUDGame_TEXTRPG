@@ -13,7 +13,7 @@ int main()
 	Player player;
 	playerInitialization(&player);
 
-	_Village VillageMap[3];
+	_Village VillageMap[4];
 	_Dungeon DungeonMap[3];
 
 	MapInitialization(VillageMap, DungeonMap);
@@ -23,8 +23,8 @@ int main()
 		system("mode con:cols=100 lines=25");
 		GaneStarOrGameEixt(&keyCode);
 		if (keyCode == 2) return;
-		SelectPlayerJob(keyCode, &player);
-		VillageIntro(&VillageMap[0], &player, DungeonMap);
+		SelectPlayerJob(&player);
+		SellecVillage(VillageMap, &player, DungeonMap);
 	}
 	
 

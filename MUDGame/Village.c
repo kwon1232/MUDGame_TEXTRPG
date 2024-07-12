@@ -1,6 +1,48 @@
 #include "Framework.h"
 
 
+void SellecVillage(_Village village[], Player* player, _Dungeon dungeon[])
+{
+    int POS = 4;	//0 - 새로 하기, 1 - 이어 하기, 2 - 랭킹 보기, 3 - 게임 종료 TEXT RPG
+    CursorView(0);
+    system("COLOR 5F");
+    gotoxy(10, 4); printf("1. 숲 속 마을");
+    gotoxy(35, 4); printf("2. 달맞이 마을");
+    gotoxy(10, 5); printf("3. 해변 마을");
+    gotoxy(35, 5); printf("4. 폭포 마을");
+
+    gotoxy(0, 8);
+    printf("이동하고 싶은 마을의 번호를 입력해주세요 : ");
+    scanf("%d", &POS);
+    system("cls");
+    
+    if (POS == 1) {
+        printf("숲 속 마을로 이동합니다.");
+        VillageIntro(&village[0], &player, dungeon);
+        Sleep(800);
+        system("cls");
+    }
+    else if (POS == 2) {
+        printf("달맞이 마을로 이동합니다.");
+        VillageIntro(&village[1], &player, dungeon);
+        Sleep(800);
+        system("cls");
+    }
+    else if (POS == 3) {
+        printf("해변 마을로 이동합니다.");
+        VillageIntro(&village[2], &player, dungeon);
+        Sleep(800);
+        system("cls");
+    }
+    else{
+        printf("폭포 마을로 이동합니다.");
+        VillageIntro(&village[3], &player, dungeon);
+        Sleep(800);
+        system("cls");
+    }
+
+}
+
 void VillageIntro(_Village* village, Player* player, _Dungeon dungeon[])
 {
 
@@ -31,7 +73,7 @@ void VillageMainScene(_Village* village, Player* player, _Dungeon dungeon[])
     int InputValue = 0;
     while (true)
     {
-        printf("1. 훈련장\n2. 상점\n3. 퀘스트\n4. 던전 모험하기\n\n");
+        printf("1. 훈련장\n2. 상점\n3. 퀘스트\n4. 스킬창 열기\n5. 던전 모험하기\n\n");
         printf("입력 : ");
         scanf("%d", &InputValue);
         if (InputValue == 1)
@@ -53,6 +95,10 @@ void VillageMainScene(_Village* village, Player* player, _Dungeon dungeon[])
             break;
         }
         else if (InputValue == 4)
+        {
+            // 스킬 올려주는 함수 구현
+        }
+        else if (InputValue == 5)
         {
             DungeonInitial(dungeon, player);
         }
@@ -146,7 +192,7 @@ void HPTrainingCenter(Player* player)
     while (true)
     {
         system("cls");
-        printf("%.2f%%완료\n", (double)(start_time / 1) * 100);
+        printf("훈련중...!\n");
         Sleep(500);
         system("cls");
         if ((double)(start_time / 1) * 100 >= 100)
@@ -171,7 +217,7 @@ void MPTrainingCenter(Player* player)
     while (true)
     {
         system("cls");
-        printf("%.2f%%완료\n", (double)(start_time / 1) * 100);
+        printf("훈련중...!\n");
         Sleep(500);
         system("cls");
         if ((double)(start_time / 1) * 100 >= 100)
@@ -196,7 +242,7 @@ void SkillTrainingCenter(Player* player)
     while (true)
     {
         system("cls");
-        printf("%.2f%%완료\n", (double)(start_time / 1) * 100);
+        printf("훈련중...!\n");
         Sleep(500);
         system("cls");
         if ((double)(start_time / 1) * 100 >= 100)
@@ -221,7 +267,7 @@ void QuicknessTrainingCenter(Player* player)
     while (true)
     {
         system("cls");
-        printf("%.2f%%완료\n", (double)(start_time / 1) * 100);
+        printf("훈련중...!\n");
         Sleep(500);
         system("cls");
         if ((double)(start_time / 1) * 100 >= 100)

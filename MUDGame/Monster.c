@@ -1,7 +1,7 @@
 #include "Framework.h"
 
 
-void MonsterInitial(_Dungeon* dungeon, _Monster* monster, Player* player)
+void MonsterInitial(struct DUNGEON* dungeon, _Monster* monster, Player* player)
 {
 	char MonsterNameArr[7][120] =
 	{
@@ -110,51 +110,523 @@ void MonsterInitial(_Dungeon* dungeon, _Monster* monster, Player* player)
 
 void MonsterSetSkill(_Monster* monster)
 {
+	int SkillAtk;
 	switch (monster->monsterType)
 	{
 	case EXStemp:
-	{
-
-	}
-	break;
 	case EStemp:
-	{
-
-	}
-	break;
 	case EDarkStemp:
 	{
-
+		SkillAtk = 2 + monster->Attack;
+		monster->StempMonsterSkill.CurseofForest = SkillAtk;
+		monster->StempMonsterSkill.VinesBat = SkillAtk;
+		strcpy(monster->StempMonsterSkill.skillName[0], "덩쿨 방망이");
+		strcpy(monster->StempMonsterSkill.skillName[1], "숲의 저주");
 	}
 	break;
 	case EFallenTreeFairy:
-	{
-
-	}
-	break;
 	case EShadeFairy:
 	{
-
+		SkillAtk = 2 + monster->Attack;
+		monster->FairyMonsterSkill.PowerofMystery = SkillAtk;
+		monster->FairyMonsterSkill.WonderSteam = SkillAtk;
+		strcpy(monster->FairyMonsterSkill.skillName[0], "신비의 힘");
+		strcpy(monster->FairyMonsterSkill.skillName[1], "증기 뿜기");
 	}
 	break;
 	case EDail:
 	{
-
+		SkillAtk = 3 + monster->Attack;
+		monster->DailMonsterSkill.CurseOfSwamp = SkillAtk;
+		monster->DailMonsterSkill.ThrowingMud = SkillAtk;
+		strcpy(monster->FairyMonsterSkill.skillName[0], "늪의 저주");
+		strcpy(monster->FairyMonsterSkill.skillName[1], "진흙 던지기");
 	}
 	break;
 	case EDino:
 	{
-
+		SkillAtk = 4 + monster->Attack;
+		monster->DinoMonsterSkill.GameOfDirt = SkillAtk;
+		strcpy(monster->FairyMonsterSkill.skillName[0], "흙탕물 놀이");
 	}
 	break;
 	}
 }
 
 
-void MonsterAtk(_Monster* monster, Player* player)
+void MonsterAtk(_Monster* monster, Player* player, _Village village[], struct DUNGEON* dungeon[])
 {
 
+	bool isSkillAtk = rand() % 3;
+	system("cls");
+	if (!isSkillAtk && monster->Mp > 0)
+	{
+		switch (monster->monsterType)
+		{
+		case EXStemp:
+		case EStemp:
+		case EDarkStemp:
+		{
+			int randSkill = rand() % 1;
+			switch (randSkill)
+			{
+			case 0:
+				printf("\n\n몬스터가 %s 스킬을 사용했습니다!\n",monster->StempMonsterSkill.skillName[randSkill]);
+				if (AvoidMonsterAttackWithPlayerQuickness(monster, player))
+				{
+					printf("%s(이)가 회피에 성공했습니다!\n", player->PlayerName);
+					Sleep(1100);
+					system("cls");
+					return;
+				}
+				else
+				{
+					printf("\n\n몬스터의 스킬로 %s는 피해를 입었습니다!\n",player->PlayerName);
+					player->Hp -= monster->StempMonsterSkill.VinesBat;
+					if (player->Hp <= 0)
+					{
+						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
+						system("cls");
+						SellecVillage(village, player, dungeon);
+						return;
+					}
+					printf("\n플레이어의 HP : %d", player->Hp);
+				}
+				break;
+			case 1:
+				printf("\n\n몬스터가 %s 스킬을 사용했습니다!\n", monster->StempMonsterSkill.skillName[randSkill]);
+				if (AvoidMonsterAttackWithPlayerQuickness(monster, player))
+				{
+					printf("%s(이)가 회피에 성공했습니다!\n", player->PlayerName);
+					Sleep(1100);
+					system("cls");
+					return;
+				}
+				else
+				{
+					printf("\n\n몬스터의 스킬로 %s는 피해를 입었습니다!\n", player->PlayerName);
+					player->Hp -= monster->StempMonsterSkill.CurseofForest;
+					if (player->Hp <= 0)
+					{
+						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
+						system("cls");
+						SellecVillage(village, player, dungeon);
+						return;
+					}
+					printf("\n플레이어의 HP : %d", player->Hp);
+				}
+				break;
+			}
+			// 원래 대전 로직으로 돌아가기
+			return;
+		}
+		break;
+		case EFallenTreeFairy:
+		case EShadeFairy:
+		{
+			int randSkill = rand() % 1;
+			switch (randSkill)
+			{
+			case 0:
+				printf("\n\n몬스터가 %s 스킬을 사용했습니다!\n", monster->FairyMonsterSkill.skillName[randSkill]);
+				if (AvoidMonsterAttackWithPlayerQuickness(monster, player))
+				{
+					printf("%s(이)가 회피에 성공했습니다!\n", player->PlayerName);
+					Sleep(1100);
+					system("cls");
+					return;
+				}
+				else
+				{
+					printf("\n\n몬스터의 스킬로 %s는 피해를 입었습니다!\n",player->PlayerName);
+					player->Hp -= monster->FairyMonsterSkill.PowerofMystery;
+					if (player->Hp <= 0)
+					{
+						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
+						system("cls");
+						SellecVillage(village, player, dungeon);
+						return;
+					}
+					printf("\n플레이어의 HP : %d", player->Hp);
+				}
+				break;
+			case 1:
+				printf("\n\n몬스터가 %s 스킬을 사용했습니다!\n", monster->FairyMonsterSkill.skillName[randSkill]);
+				if (AvoidMonsterAttackWithPlayerQuickness(monster, player))
+				{
+					printf("%s(이)가 회피에 성공했습니다!\n", player->PlayerName);
+					Sleep(1100);
+					system("cls");
+					return;
+				}
+				else
+				{
+					printf("\n\n몬스터의 스킬로 %s는 피해를 입었습니다!\n", player->PlayerName);
+					player->Hp -= monster->FairyMonsterSkill.WonderSteam;
+					if (player->Hp <= 0)
+					{
+						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
+						system("cls");
+						SellecVillage(village, player, dungeon);
+						return;
+					}
+					printf("\n플레이어의 HP : %d", player->Hp);
+				}
+				break;
+			}
+			// 원래 대전 로직으로 돌아가기
+			return;
+		}
+		break;
+		case EDail:
+		{
+			int randSkill = rand() % 1;
+			switch (randSkill)
+			{
+			case 0:
+				printf("\n\n몬스터가 %s 스킬을 사용했습니다!\n", monster->DailMonsterSkill.skillName[randSkill]);
+				if (AvoidMonsterAttackWithPlayerQuickness(monster, player))
+				{
+					printf("%s(이)가 회피에 성공했습니다!\n", player->PlayerName);
+					Sleep(1100);
+					system("cls");
+					return;
+				}
+				else
+				{
+					printf("\n\n몬스터의 스킬로 %s는 피해를 입었습니다!\n", player->PlayerName);
+					player->Hp -= monster->DailMonsterSkill.CurseOfSwamp;
+					if (player->Hp <= 0)
+					{
+						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
+						system("cls");
+						SellecVillage(village, player, dungeon);
+						return;
+					}
+					printf("\n플레이어의 HP : %d", player->Hp);
+				}
+				break;
+			case 1:
+				printf("\n\n몬스터가 %s 스킬을 사용했습니다!\n", monster->DailMonsterSkill.skillName[randSkill]);
+				if (AvoidMonsterAttackWithPlayerQuickness(monster, player))
+				{
+					printf("%s(이)가 회피에 성공했습니다!\n", player->PlayerName);
+					Sleep(1100);
+					system("cls");
+					return;
+				}
+				else
+				{
+					printf("\n\n몬스터의 스킬로 %s는 피해를 입었습니다!\n", player->PlayerName);
+					player->Hp -= monster->DailMonsterSkill.ThrowingMud;
+					if (player->Hp <= 0)
+					{
+						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
+						system("cls");
+						SellecVillage(village, player, dungeon);
+						return;
+					}
+					printf("\n플레이어의 HP : %d", player->Hp);
+				}
+				break;
+			}
+			// 원래 대전 로직으로 돌아가기
+			return;
+		}
+		break;
+		case EDino:
+		{
+			printf("\n\n몬스터가 %s 스킬을 사용했습니다!\n", monster->DailMonsterSkill.skillName[0]);
+			printf("디노가 던지는 흙탕물을 피해보세요!");
+			// ToDo
+			// 비행기 놀이 구현
+			
+			
+			// 원래 대전 로직으로 돌아가기
+			return;
+		}
+		break;
+		}
+	}
+
+	else
+	{
+		system("cls");
+		printf("몬스터가 몸통박치기를 했습니다! \n");
+		Sleep(1100);
+		if (AvoidMonsterAttackWithPlayerQuickness(monster, player))
+		{
+			printf("%s(이)가 회피에 성공했습니다!\n", player->PlayerName);
+			Sleep(1100);
+			system("cls");
+			return;
+		}
+
+		printf("%s(이)가 공격받았습니다!\n\n", player->PlayerName);
+		player->Hp -= monster->Attack;
+		if (player->Hp <= 0)
+		{
+			printf("%s(이)가 사망했습니다!\n", player->PlayerName);
+			system("cls");
+			SellecVillage(village, player, dungeon);
+			return;
+		}
+		printf("플레이어의 HP : %d", player->Hp);
+		system("cls");
+		
+		Sleep(1100);
+	}
 }
 
+bool AvoidMonsterAttackWithPlayerQuickness(_Monster* monster, Player* player)
+{
+	int playerQuicknes = rand() % 99 + 1;
+
+	if (playerQuicknes >= 1 && playerQuicknes <= player->Quickness)
+	{
+		return true;
+	}
+	return false;
+}
+
+void PlayerAtkMonster(_Monster* monster, Player* player)
+{
+	int InputValue = 0;
+	bool isRun = false;
+
+	while (true)
+	{
+		if (!isRun)
+		{
+			printf("\n\n플레이어가 공격할 차례입니다!\n");
+			printf("1. 스킬 사용\n2. 기본 공격\n3. 도망가기\n\n");
+			scanf("%d", &InputValue);
+
+			switch (InputValue)
+			{
+			case 1:
+			{
+				PlayerSkillListPrint(player);
+				PlayerSkillAtkMonster(monster, player);
+			}
+			break;
+			case 2:
+			{
+				printf("%s(이)는 기본 공격을 성공했다!", player->PlayerName);
+				monster->Hp -= player->Attack;
+				system("cls");
+				// TODO:
+				// 대전 로직으로 돌아가기
+				return;
+			}
+				break;
+			case 3:
+			{
+				isRun = rand() % 1;
+				if (!isRun)
+				{
+					printf("\n\n%s는 도망갈 수 있었다!\n", player->PlayerName);
+					system("cls");
+					// TODO:
+					// 대전 로직도 탈출하기
+					return;
+				}
+				else
+				{
+					printf("\n\n%s는 도망갈 수 없었다!\n", player->PlayerName);
+				}
+			}
+				break;
+			}
+		}
+		else
+		{
+			printf("\n\n플레이어가 공격할 차례입니다!\n");
+			printf("1. 스킬 사용\n2. 기본 공격\n\n");
+			scanf("%d", &InputValue);
+
+			switch (InputValue)
+			{
+			case 1:
+			{
+				PlayerSkillListPrint(player);
+				PlayerSkillAtkMonster(monster, player);
+			}
+				break;
+			case 2:
+			{
+				printf("%s(이)는 기본 공격을 성공했다!", player->PlayerName);
+				monster->Hp -= player->Attack;
+				system("cls");
+				// TODO:
+				// 대전 로직으로 돌아갈 수 있도록 대전 로직 만들기
+				return;
+			}
+				break;
+			}
+		}
 
 
+		system("cls");
+	}
+}
+
+void PlayerSkillAtkMonster(_Monster* monster, Player* player)
+{
+	char SkillToUse[80];
+	printf("사용하실 스킬을 입력해주세요 : ");
+	scanf("%s", &SkillToUse);
+	switch (player->PlayerJobType)
+	{
+	case EWizard:
+		switch (player->JobStepType)
+		{
+		case EIntermediate:
+			if (strcmp(SkillToUse, "FireSpike") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Intermediate_WizardSkill.FireSpike;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", player->JobSkillList.Intermediate_WizardSkill.FireSpike);
+				// 공격 후 다시 대전 상태로 돌아감
+				// 대전 상태에서 몬스터 죽으면 처치했습니다! 출력 후
+				// 다시 맵 포지션으로 돌아감
+			}
+			else if (strcmp(SkillToUse, "ConOfIce") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Intermediate_WizardSkill.ConOfIce;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", player->JobSkillList.Intermediate_WizardSkill.ConOfIce);
+			}
+		case EBeginner:
+			if (strcmp(SkillToUse, "FireBeam") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Beginner_WizardSkill.FireBeam;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", player->JobSkillList.Beginner_WizardSkill.FireBeam);
+			}
+			else if (strcmp(SkillToUse, "AquaBeam") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Beginner_WizardSkill.AquaBeam;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Beginner_WizardSkill.AquaBeam);
+			}
+			else if (strcmp(SkillToUse, "LightingBeam") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Beginner_WizardSkill.LightingBeam;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Beginner_WizardSkill.LightingBeam);
+			}
+		case EDefault:
+			if (strcmp(SkillToUse, "FireBall") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Default_WizardSkill.FireBall;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Default_WizardSkill.FireBall);
+			}
+			else if (strcmp(SkillToUse, "SnowBall") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Default_WizardSkill.SnowBall;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Default_WizardSkill.SnowBall);
+			}
+			else if (strcmp(SkillToUse, "LightBall") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Default_WizardSkill.LightBall;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Default_WizardSkill.LightBall);
+			}
+			break;
+		}
+		break;
+	case EWarrior:
+		switch (player->JobStepType)
+		{
+		case EIntermediate:
+			if (strcmp(SkillToUse, "BloodInfinite") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Intermediate_WarriorSkill.BloodInfinite;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Intermediate_WarriorSkill.BloodInfinite);
+			}
+			else if (strcmp(SkillToUse, "Duellatorum") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Intermediate_WarriorSkill.Duellatorum;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Intermediate_WarriorSkill.Duellatorum);
+			}
+		case EBeginner:
+			if (strcmp(SkillToUse, "BletInfinity") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Beginner_WarriorSkill.BletInfinity;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Beginner_WarriorSkill.BletInfinity);
+			}
+			else if (strcmp(SkillToUse, "Damascus") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Beginner_WarriorSkill.Damascus;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Beginner_WarriorSkill.Damascus);
+			}
+			else if (strcmp(SkillToUse, "Judgment") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Beginner_WarriorSkill.Judgment;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Beginner_WarriorSkill.Judgment);
+			}
+		case EDefault:
+			if (strcmp(SkillToUse, "Blade") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Default_WarriorSkill.Blade;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Default_WarriorSkill.Blade);
+			}
+			else if (strcmp(SkillToUse, "Phantom") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Default_WarriorSkill.Phantom;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Default_WarriorSkill.Phantom);
+			}
+			else if (strcmp(SkillToUse, "Hellfire") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Default_WarriorSkill.Hellfire;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Default_WarriorSkill.Hellfire);
+			}
+			break;
+		}
+
+	case EArcher:
+		switch (player->JobStepType)
+		{
+		case EIntermediate:
+			if (strcmp(SkillToUse, "Evolve") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Intermediate_ArcherSkill.Evolve;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Intermediate_ArcherSkill.Evolve);
+			}
+			else if (strcmp(SkillToUse, "IllusionStep") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Intermediate_ArcherSkill.IllusionStep;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Intermediate_ArcherSkill.IllusionStep);
+			}
+		case EBeginner:
+			if (strcmp(SkillToUse, "PosionArrow") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Beginner_ArcherSkill.PosionArrow;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Beginner_ArcherSkill.PosionArrow);
+			}
+			else if (strcmp(SkillToUse, "LightningArrow") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Beginner_ArcherSkill.LightningArrow;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Beginner_ArcherSkill.LightningArrow);
+			}
+			else if (strcmp(SkillToUse, "WindBoom") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Beginner_ArcherSkill.WindBoom;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Beginner_ArcherSkill.WindBoom);
+			}
+		case EDefault:
+			if (strcmp(SkillToUse, "IceArrow") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Default_ArcherSkill.IceArrow;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Default_ArcherSkill.IceArrow);
+			}
+			else if (strcmp(SkillToUse, "FireArrow") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Default_ArcherSkill.FireArrow;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Default_ArcherSkill.FireArrow);
+			}
+			else if (strcmp(SkillToUse, "BustArrow") == 0)
+			{
+				monster->Hp -= player->JobSkillList.Default_ArcherSkill.BustArrow;
+				printf("\n몬스터에게 %d 만큼 피해를 입혔습니다!", monster->Hp -= player->JobSkillList.Default_ArcherSkill.BustArrow);
+			}
+			break;
+		}
+
+	}
+}
