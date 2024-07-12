@@ -1,4 +1,5 @@
 #include "framework.h"
+#include "DungeonMatrix.h"
 
 void DungeonInitial(_Dungeon dungeon[], Player* player)
 {

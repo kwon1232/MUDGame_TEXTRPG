@@ -55,6 +55,9 @@
     <ClCompile Include="Map.c">
       <Filter>private\Map</Filter>
     </ClCompile>
+    <ClCompile Include="Monster.c">
+      <Filter>private\Monster</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -89,6 +92,9 @@
     </ClInclude>
     <ClInclude Include="DungeonMatrix.h">
       <Filter>Public\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>Public\Monster</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

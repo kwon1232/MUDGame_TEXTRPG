@@ -135,6 +135,7 @@
     <ClCompile Include="PlayerSkill.c" />
     <ClCompile Include="Village.c" />
     <ClCompile Include="WinAPIControl.c" />
+    <ClCompile Include="Monster.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dungeon.h" />
@@ -148,6 +149,7 @@
     <ClInclude Include="PlayerSkill.h" />
     <ClInclude Include="Village.h" />
     <ClInclude Include="WinAPIControl.h" />
+    <ClInclude Include="Monster.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
