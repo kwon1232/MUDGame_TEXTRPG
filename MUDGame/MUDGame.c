@@ -1,8 +1,8 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS 
 
 
-#include "MUDGame.h"
 #include "Framework.h"
+#include "MUDGame.h"
 
 int main()
 {
@@ -24,7 +24,7 @@ int main()
 		GaneStarOrGameEixt(&keyCode);
 		if (keyCode == 2) return;
 		SelectPlayerJob(keyCode, &player);
-		VillageIntro(&VillageMap[0], &player);
+		VillageIntro(&VillageMap[0], &player, DungeonMap);
 	}
 	
 

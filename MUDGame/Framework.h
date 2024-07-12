@@ -1,10 +1,17 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS 
 
-//Dungeon
-#define MAP_WIDTH 51
-#define MAP_HEIGHT 31
+//Quest
 #define QuestListCount 8
+
+//Dungeon
+#define START 3
+#define FINISH 4
+#define PLAYER_ 20
+#define WALL 1
+#define SPACE 0
+#define RMS 25
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,6 +26,7 @@
 #include <consoleapi3.h>
 #include "WinAPIControl.h"
 
+
 #include "Player.h"
 #include "Intro.h"
 
@@ -29,3 +37,6 @@
 #include "Map.h"
 #include "Dungeon.h"
 #include "Village.h"
+#include "DungeonMatrix.h"
+
+#include "Monster.h"

@@ -43,23 +43,33 @@ COORD GetXY()
 
 void PrintIntroMenu()
 {
-	int POS = 4;	//0 - 새로 하기, 1 - 이어 하기, 2 - 랭킹 보기, 3 - 게임 종료
+	int POS = 4;	//0 - 새로 하기, 1 - 이어 하기, 2 - 랭킹 보기, 3 - 게임 종료 TEXT RPG
 	CursorView(0);
 	system("COLOR 0F");
-	system("mode con: cols=106 lines=9");
-	printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-	printf("■                                                                                                      ■");
-	printf("■                                                                                                      ■");
-	printf("■                                                                                                      ■");
-	printf("■                                                                                                      ■");
-	printf("■                                                                                                      ■");
-	printf("■                                                                                                      ■");
-	printf("■                                                                                                      ■");
-	printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+	system("mode con: cols=110 lines=25");
+	printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+	printf("■                                                                                                          ■");
+	printf("■                                                                                                          ■");
+	printf("■                                                                                                          ■");
+	printf("■                                                                                                          ■");
+	printf("■                                                                                                          ■");
+	printf("■                                                                                                          ■");
+	printf("■                                                                                                          ■");
+	printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n\n");
+	
+	printf("\n※※※※※※ ※※※※※   ※※※    ※※※  ※※※※※※    ※※※※※※    ※※※※※※    ※※※※※  \n");
+	printf("    ※※     ※※           ※※   ※※         ※※        ※※      ※※  ※※    ※※  ※※      ※※\n");
+	printf("    ※※     ※※            ※※ ※※          ※※        ※※      ※※  ※※     ※※ ※※       ※※\n");
+	printf("    ※※     ※※※※※        ※※             ※※        ※※     ※※   ※※    ※※  ※※       \n");
+	printf("    ※※     ※※            ※※ ※※          ※※        ※※   ※※     ※※※※※    ※※    ※※※ \n");
+	printf("    ※※     ※※          ※※     ※※        ※※        ※※     ※※   ※※           ※※     ※ \n");
+	printf("    ※※     ※※※※※  ※※※     ※※※      ※※        ※※     ※※   ※※             ※※※※ \n");
+
 	gotoxy(10, 4); printf("새로  하기");
 	gotoxy(35, 4); printf("이어  하기");
 	gotoxy(60, 4); printf("랭킹  보기");
 	gotoxy(85, 4); printf("게임  종료");
+	
 	while (true) {
 		if (GetAsyncKeyState(VK_LEFT))
 			if (POS == 0) POS = 3;

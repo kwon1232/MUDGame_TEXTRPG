@@ -1,3 +1,18 @@
-﻿  MUDGame.c
-D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\MUDGame.c(10,8): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  MUDGame.vcxproj -> D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\x64\Debug\MUDGame.exe
+﻿  Village.c
+Intro.obj : error LNK2005: RandomMap이(가) Dungeon.obj에 이미 정의되어 있습니다.
+Intro.obj : error LNK2005: MonsterNameArr이(가) Dungeon.obj에 이미 정의되어 있습니다.
+Map.obj : error LNK2005: RandomMap이(가) Dungeon.obj에 이미 정의되어 있습니다.
+Map.obj : error LNK2005: MonsterNameArr이(가) Dungeon.obj에 이미 정의되어 있습니다.
+Monster.obj : error LNK2005: RandomMap이(가) Dungeon.obj에 이미 정의되어 있습니다.
+Monster.obj : error LNK2005: MonsterNameArr이(가) Dungeon.obj에 이미 정의되어 있습니다.
+MUDGame.obj : error LNK2005: RandomMap이(가) Dungeon.obj에 이미 정의되어 있습니다.
+MUDGame.obj : error LNK2005: MonsterNameArr이(가) Dungeon.obj에 이미 정의되어 있습니다.
+Player.obj : error LNK2005: RandomMap이(가) Dungeon.obj에 이미 정의되어 있습니다.
+Player.obj : error LNK2005: MonsterNameArr이(가) Dungeon.obj에 이미 정의되어 있습니다.
+PlayerSkill.obj : error LNK2005: RandomMap이(가) Dungeon.obj에 이미 정의되어 있습니다.
+PlayerSkill.obj : error LNK2005: MonsterNameArr이(가) Dungeon.obj에 이미 정의되어 있습니다.
+Village.obj : error LNK2005: RandomMap이(가) Dungeon.obj에 이미 정의되어 있습니다.
+Village.obj : error LNK2005: MonsterNameArr이(가) Dungeon.obj에 이미 정의되어 있습니다.
+WinAPIControl.obj : error LNK2005: RandomMap이(가) Dungeon.obj에 이미 정의되어 있습니다.
+WinAPIControl.obj : error LNK2005: MonsterNameArr이(가) Dungeon.obj에 이미 정의되어 있습니다.
+D:\PROJECT\C_C++\MUDGame_TEXTRPG\x64\Debug\MUDGame.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.

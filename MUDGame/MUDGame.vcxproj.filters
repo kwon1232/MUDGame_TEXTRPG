@@ -23,6 +23,12 @@
     <Filter Include="private\Map">
       <UniqueIdentifier>{280dffb8-835d-4462-903e-7095e4d81a15}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Public\Monster">
+      <UniqueIdentifier>{be8a9d34-2896-4556-bb01-b18401022b20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private\Monster">
+      <UniqueIdentifier>{3dfb4983-4d4b-4b61-bf2e-09621209425d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Intro.c">
@@ -79,6 +85,9 @@
       <Filter>Public\Map</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">
+      <Filter>Public\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonMatrix.h">
       <Filter>Public\Map</Filter>
     </ClInclude>
   </ItemGroup>

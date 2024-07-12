@@ -1,7 +1,7 @@
 #include "Framework.h"
 
 
-void VillageIntro(_Village* village, Player* player)
+void VillageIntro(_Village* village, Player* player, _Dungeon dungeon[])
 {
 
     village->Map.MapType = EVillage;
@@ -23,10 +23,10 @@ void VillageIntro(_Village* village, Player* player)
     printf("\n\n%s 마을에 오신 것을 환영합니다!\n\n",village->VillageName);
     Sleep(1200);
     system("cls");
-    VillageMainScene(village, player);
+    VillageMainScene(village, player, dungeon);
 }
 
-void VillageMainScene(_Village* village, Player* player)
+void VillageMainScene(_Village* village, Player* player, _Dungeon dungeon[])
 {
     int InputValue = 0;
     while (true)
@@ -37,31 +37,31 @@ void VillageMainScene(_Village* village, Player* player)
         if (InputValue == 1)
         {
             village->VillageType = TrainingCenter;
-            TrainingCenterIntro(village, player);
+            TrainingCenterIntro(village, player, dungeon);
             break;
         }
         else if (InputValue == 2)
         {
             village->VillageType = Store;
-            StoreIntro(village, player);
+            StoreIntro(village, player, dungeon);
             break;
         }
         else if (InputValue == 3)
         {
             village->VillageType = Quest;
-            QuestIntro(village, player);
+            QuestIntro(village, player, dungeon);
             break;
         }
         else if (InputValue == 4)
         {
-            PrintDungeonIntro();
+            DungeonInitial(dungeon, player);
         }
         printf("\n 다시 입력해주세요\n\n");
         system("cls");
     }
 }
 
-void TrainingCenterIntro(_Village* village, Player* player)
+void TrainingCenterIntro(_Village* village, Player* player, _Dungeon dungeon[])
 {
     int InputValue = 0;
 
@@ -83,7 +83,7 @@ void TrainingCenterIntro(_Village* village, Player* player)
             system("cls");
             printf("\n\n마을에서 충분히 훈련하셨습니다!\n");
             printf("\n마을 밖에서 모험을 즐겨주세요!\n");
-            VillageMainScene(village, player);
+            VillageMainScene(village, player, dungeon);
             break;
         }
 
@@ -126,7 +126,7 @@ void TrainingCenterIntro(_Village* village, Player* player)
         else if (InputValue == 5)
         {
             system("cls");
-            VillageMainScene(village, player);
+            VillageMainScene(village, player, dungeon);
             break;
         }
 
@@ -237,7 +237,7 @@ void QuicknessTrainingCenter(Player* player)
 }
 
 
-void QuestIntro(_Village* village, Player* player)
+void QuestIntro(_Village* village, Player* player, _Dungeon dungeon[])
 {
     int InputValue = 0;
     char QuestNum[40];
@@ -263,8 +263,8 @@ void QuestIntro(_Village* village, Player* player)
 
             case 1:
                 printf("퀘스트 넘버 : Q.N-1\n\n");
-                printf("엑스텀프를 잡아와주세요.\n");
-                printf("엑스텀프가 돌아다니는 통에 최근에 마을 밖으로 나간 적이 없어요.\n\n");
+                printf("엑스 스텀프를 잡아와주세요.\n");
+                printf("엑스 스텀프가 돌아다니는 통에 최근에 마을 밖으로 나간 적이 없어요.\n\n");
                 printf("목표 : 오솔길 던전의 엑스텀프 3마리 잡기\n");
                 printf("보상 : 50골드, 체력 포션 5개\n");
                 break;
@@ -352,17 +352,17 @@ void QuestIntro(_Village* village, Player* player)
         if (InputValue == 2) 
         { 
             system("cls");
-            VillageMainScene(village, player);
+            VillageMainScene(village, player, dungeon);
             break;
         }
         printf("\n\n받아올 퀘스트 넘버를 입력해주세요 : ");
         scanf("%s", &QuestNum);
-        if (QuestAccept(village, player, QuestNum))
+        if (QuestAccept(player,QuestNum))
         {
             printf("\n\n퀘스트를 수락했습니다!");
             Sleep(1000);
             system("cls");
-            VillageMainScene(village, player);
+            VillageMainScene(village, player, dungeon);
             break;
         }
         else
@@ -370,24 +370,26 @@ void QuestIntro(_Village* village, Player* player)
             printf("\n\n이미 수락한 퀘스트입니다!");
             Sleep(1000);
             system("cls");
-            VillageMainScene(village, player);
+            VillageMainScene(village, player, dungeon);
             break;
         }
     }
 }
 
-bool QuestAccept(_Village* village, Player* player, char QuestNum[])
+bool QuestAccept(Player* player, char QuestNum[])
 {
     for (int i = 0; i < QuestListCount; i++)
     {
         if (strcmp(player->P_Quest.QuestListStr[i], QuestNum) == 0)
         {
             player->P_Quest.CheckAcceptQuestList[i] = true;
+            return true;
         }
     }
+    return false;
 }
 
-void StoreIntro(_Village* village, Player* player)
+void StoreIntro(_Village* village, Player* player, _Dungeon dungeon[])
 {
     int InputValue = 0;
     system("cls");
@@ -396,16 +398,16 @@ void StoreIntro(_Village* village, Player* player)
         village->StoreType = ENone_StoreStage;
         printf("\n상점에 오신 것을 환영합니다!\n\n");
 
-        printf("-------------------------------------------------------------------\n");
+        printf("===================================================================\n");
         printf("|                                                                 |\n");
         printf("|                                                                 |\n");
-        printf("|                  1. 체력 포션 구매                               |\n");
-        printf("|                  2. 마력 포션 구매                               |\n");
-        printf("|                  3. 아이템 판매                                  |\n");
-        printf("|                  4. 나가기                                       |\n");
+        printf("|                  1. 체력 포션 구매                              |\n");
+        printf("|                  2. 마력 포션 구매                              |\n");
+        printf("|                  3. 아이템 판매                                 |\n");
+        printf("|                  4. 나가기                                      |\n");
         printf("|                                                                 |\n");
         printf("|                                                                 |\n");
-        printf("-------------------------------------------------------------------\n");
+        printf("===================================================================\n");
 
         printf("\n어떤 거래를 하시겠습니까 숫자를 입력해주세요:\n");
         scanf("%d", &InputValue);
@@ -554,6 +556,7 @@ void StoreIntro(_Village* village, Player* player)
         if (InputValue == 4)
         {
             system("cls");
+            VillageIntro(village, player, dungeon);
             break;
         }
     }
