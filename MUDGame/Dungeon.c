@@ -24,12 +24,19 @@ void DungeonInitial(_Dungeon dungeonArr[], Player* player, _Dungeon* dungeon)
 	timer = 0;
 	PrintDungeonIntro();
 	// 여기서 함수 -> 입장 -> 탈출을 반복해서 로직을 진행 시키고 배열 시작점은 여기만 알게끔 해주기
-	SetMap(dungeon);
+	//SetMap(dungeon);
+	DungeonEntrance();
 }
 
 void DungeonEntrance()
 {
-
+	// 대전을 시작하는 로직 실행시켜주기
+	printf("대전을 시작합니다!\n");
+	
+	printf("몬스터의 공격 시작! \n");
+	// 몬스터 공격 로직
+	printf("플레이어의 공격 시작! \n");
+	// 플레이어의 공격 로직
 }
 
 void PrintDungeonIntro()
@@ -179,7 +186,78 @@ int** RollingArray(int MapArr[25][25], int num, int block)
 	return arr;
 
 }
-
-
-
-
+//https://blog.naver.com/ifthe1201/221056987564
+//void GamePlay(void) {
+//	int PosX = 1, PosY = 1;    //플레이어의 좌표
+//	sprintf(title, "title 미로찾기 - %d단계", level);
+//	system(title);
+//	system("mode con: cols=100 lines=50");    //50 * 50만큼 출력할 창
+//	SetMap();    //전 강좌에서 만들었던 자동 맵 생성
+//}
+//
+//
+//void PrintMap(int PosX, int PosY) {
+//	int CameraPosX = 0, CameraPosY = 0;    //카메라 좌표
+//
+//	//포인터가 아니기 때문에 Pos값을 바꿔도 괜찮다.
+//	if (PosX < 25) PosX = 0;   //카메라가 왼쪽 세로벽에 부딪혔을 때
+//	else if (PosX > mapSize - 26) PosX = mapSize - 50;    //카메라가 오른쪽 세로벽에 부딪혔을 때
+//	else PosX = PosX - 25;
+//
+//	if (PosY < 25) PosY = 0;    //카메라가 위쪽 가로벽에 부딪혔을 때
+//	else if (PosY > mapSize - 26) PosY = mapSize - 50;    //카메라가 아래쪽 가로벽에 부딪혔을 때
+//	else PosY = PosY - 25;
+//
+//	for (int i = 0; i < 50; i++) {
+//		for (int j = 0; j < 50; j++) {
+//			CameraPosX = PosX + j; CameraPosY = PosY + i;  //카메라는 현재 좌표 + 출력되는 인덱스다.
+//			gotoxy(j * 2, i);  //gotoxy는 콘솔에서 입력할 것이니 그대로 해주면 됨.
+//			if (map[CameraPosY][CameraPosX] == PLAYER) {  //플레이어를 출력
+//				SetColor(10);
+//				printf("●");
+//				SetColor(15);
+//			}
+//			else if (map[CameraPosY][CameraPosX] == FINISH) {  //피니시 장소를 출력
+//				SetColor(204);
+//				printf("  ");
+//				SetColor(15);
+//			}
+//			else printf("%s", pMap[map[CameraPosY][CameraPosX]]);  //그 외 벽이나 공간을 출력
+//		}
+//	}
+//	return;
+//}
+//
+//void PlayerMove(int* PosX, int* PosY, int Key) {
+//	switch (Key) {
+//	case VK_UP: if (map[*PosY - 1][*PosX] != WALL) { map[*PosY][*PosX] = SPACE; *PosY -= 1; } break;
+//	case VK_DOWN: if (map[*PosY + 1][*PosX] != WALL) { map[*PosY][*PosX] = SPACE; *PosY += 1; } break;
+//	case VK_LEFT: if (map[*PosY][*PosX - 1] != WALL) { map[*PosY][*PosX] = SPACE; *PosX -= 1; } break;
+//	case VK_RIGHT: if (map[*PosY][*PosX + 1] != WALL) { map[*PosY][*PosX] = SPACE; *PosX += 1; } break;
+//	}
+//	map[*PosY][*PosX] = PLAYER;
+//	return;
+//}
+//
+//void GamePlay(void) {
+//	int PosX = 1, PosY = 1, NowLevel = level;
+//	char title[40] = { 0 };
+//
+//	sprintf(title, "title 미로찾기 - %d단계", level);
+//	system(title);
+//	system("mode con: cols=100 lines=50");
+//	SetMap();
+//	while (true) {
+//		if (GetAsyncKeyState(VK_UP))
+//			PlayerMove(&PosX, &PosY, VK_UP);
+//		else if (GetAsyncKeyState(VK_DOWN))
+//			PlayerMove(&PosX, &PosY, VK_DOWN);
+//		else if (GetAsyncKeyState(VK_LEFT))
+//			PlayerMove(&PosX, &PosY, VK_LEFT);
+//		else if (GetAsyncKeyState(VK_RIGHT))
+//			PlayerMove(&PosX, &PosY, VK_RIGHT);
+//		PrintMap(PosX, PosY);
+//		Sleep(1);
+//	}
+//	return;
+//}
