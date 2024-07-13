@@ -4,19 +4,12 @@
 //Quest
 #define QuestListCount 8
 
-//Dungeon
-#define START 3
-#define FINISH 4
-#define PLAYER_ 20
-#define WALL 1
-#define SPACE 0
-#define RMS 25
 
 
+#include <malloc.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-//#include <stralign.h>
 #include <windows.h>
 #include <string.h>
 #include <time.h>

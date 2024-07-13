@@ -22,7 +22,6 @@ void MonsterInitial(struct DUNGEON* dungeon, _Monster* monster, Player* player)
 	if (dungeon->DungeonName == "오솔길 던전")
 	{
 		int DungeonLevel = rand() % 1 + 1;
-		dungeon->Dungeonlevel = DungeonLevel;
 
 		monster->Level = DungeonLevel + rand() % 2;
 		monster->Hp = DungeonLevel + rand() % 3;
@@ -55,7 +54,6 @@ void MonsterInitial(struct DUNGEON* dungeon, _Monster* monster, Player* player)
 	else if (dungeon->DungeonName == "숲 속 늪지대 던전")
 	{
 		int DungeonLevel = rand() % 1 + 2;
-		dungeon->Dungeonlevel = DungeonLevel;
 
 		monster->Level = DungeonLevel + rand() % 2;
 		monster->Hp = DungeonLevel + rand() % 3;
@@ -82,7 +80,6 @@ void MonsterInitial(struct DUNGEON* dungeon, _Monster* monster, Player* player)
 	else if (dungeon->DungeonName == "얕은 해변가 던전")
 	{
 		int DungeonLevel = rand() % 1 + 3;
-		dungeon->Dungeonlevel = DungeonLevel;
 
 		monster->Level = DungeonLevel + rand() % 2;
 		monster->Hp = DungeonLevel + rand() % 3;

@@ -11,7 +11,7 @@ typedef struct VECTOR2
 typedef vector2 Vector2;
 
 
-void SetColor(int color);
+void SetColor(int foreground, int background);
 
 void CursorView(char show);
 

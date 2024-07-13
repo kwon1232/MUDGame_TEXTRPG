@@ -18,25 +18,25 @@ void SellecVillage(_Village village[], Player* player, _Dungeon dungeon[])
     
     if (POS == 1) {
         printf("숲 속 마을로 이동합니다.");
-        VillageIntro(&village[0], &player, dungeon);
+        VillageIntro(&village[0], player, dungeon);
         Sleep(800);
         system("cls");
     }
     else if (POS == 2) {
         printf("달맞이 마을로 이동합니다.");
-        VillageIntro(&village[1], &player, dungeon);
+        VillageIntro(&village[1], player, dungeon);
         Sleep(800);
         system("cls");
     }
     else if (POS == 3) {
         printf("해변 마을로 이동합니다.");
-        VillageIntro(&village[2], &player, dungeon);
+        VillageIntro(&village[2], player, dungeon);
         Sleep(800);
         system("cls");
     }
     else{
         printf("폭포 마을로 이동합니다.");
-        VillageIntro(&village[3], &player, dungeon);
+        VillageIntro(&village[3], player, dungeon);
         Sleep(800);
         system("cls");
     }
@@ -100,7 +100,7 @@ void VillageMainScene(_Village* village, Player* player, _Dungeon dungeon[])
         }
         else if (InputValue == 5)
         {
-            DungeonInitial(dungeon, player);
+            DungeonInitial(village, player, dungeon);
         }
         printf("\n 다시 입력해주세요\n\n");
         system("cls");

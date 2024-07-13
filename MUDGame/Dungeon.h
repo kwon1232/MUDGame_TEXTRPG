@@ -21,30 +21,23 @@ typedef struct DUNGEON
 	_Direction Direction;
 	char DungeonName[120];
 	int DungeonNum;
-	char* pMap[2];
-	int** dungeonMapPtr, dungeonMapSize, ** DungeonBackMap;
+	//char* pMap[2];
+	//int** dungeonMapPtr, dungeonMapSize, ** DungeonBackMap;
+	//int Dungeonlevel, DungeonTimer;
 	// 던전 레벨에 따라 스폰되는 몬스터 타입 바꿔주기
-	int Dungeonlevel, DungeonTimer;
 }_Dungeon;
 
 
-void DungeonInitial(_Dungeon dungeon[], Player* player);
+void DungeonInitial(_Dungeon dungeonArr[], Player* player, _Dungeon* dungeon);
 
 void DungeonEntrance();
 
 void PrintDungeonIntro();
 
+// 미로 맵
 
-// 상,하,좌,우 이동 - 이때 벽을 고려하여 2칸씩 이동하는 것으로 설정함
-//const int DIR[4][2] = { {0,-2},{0,2},{-2,0},{2,0} };
-//
-//void shuffleArray(int array[], int size);
-//
-//int inRange(int y, int x);
-//
-//// 깊이 우선 탐색 맵 형성
-//void generateMap(int y, int x, int map[MAP_HEIGHT][MAP_WIDTH]);
+void SetMap(_Dungeon* dungeon);
 
-//COORD getRandomStartingPoint();
+int** RollingArray(int MapArr[25][25], int num);
 
 

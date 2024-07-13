@@ -1,10 +1,4 @@
-﻿  Village.c
-D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(21,35): warning C4047: '함수': 'Player *'의 간접 참조 수준이 'Player **'과(와) 다릅니다.
-D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(21,35): warning C4024: 'VillageIntro': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
-D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(27,35): warning C4047: '함수': 'Player *'의 간접 참조 수준이 'Player **'과(와) 다릅니다.
-D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(27,35): warning C4024: 'VillageIntro': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
-D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(33,35): warning C4047: '함수': 'Player *'의 간접 참조 수준이 'Player **'과(와) 다릅니다.
-D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(33,35): warning C4024: 'VillageIntro': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
-D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(39,35): warning C4047: '함수': 'Player *'의 간접 참조 수준이 'Player **'과(와) 다릅니다.
-D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(39,35): warning C4024: 'VillageIntro': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
-  MUDGame.vcxproj -> D:\PROJECT\C_C++\MUDGame_TEXTRPG\x64\Debug\MUDGame.exe
+﻿  Dungeon.c
+D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\Dungeon.c(82,119): warning C4020: 'RollingArray': 실제 매개 변수가 너무 많습니다.
+D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\Dungeon.c(114,7): warning C4029: 선언된 정식 매개 변수 목록이 정의와 다릅니다.
+  MUDGame.vcxproj -> D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\x64\Debug\MUDGame.exe
