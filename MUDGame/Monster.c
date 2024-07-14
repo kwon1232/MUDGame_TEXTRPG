@@ -103,6 +103,7 @@ void MonsterInitial(struct DUNGEON* dungeon, _Monster* monster, Player* player)
 		break;
 		}
 	}
+	MonsterSetSkill(monster);
 }
 
 void MonsterSetSkill(_Monster* monster)
@@ -151,7 +152,7 @@ void MonsterSetSkill(_Monster* monster)
 }
 
 
-void MonsterAtk(_Monster* monster, Player* player, _Village village[], struct DUNGEON* dungeon[])
+void MonsterAtk(_Monster* monster, Player* player)
 {
 
 	bool isSkillAtk = rand() % 3;
@@ -184,7 +185,6 @@ void MonsterAtk(_Monster* monster, Player* player, _Village village[], struct DU
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
 						system("cls");
-						SellecVillage(village, player, dungeon);
 						return;
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
@@ -207,7 +207,6 @@ void MonsterAtk(_Monster* monster, Player* player, _Village village[], struct DU
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
 						system("cls");
-						SellecVillage(village, player, dungeon);
 						return;
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
@@ -241,7 +240,6 @@ void MonsterAtk(_Monster* monster, Player* player, _Village village[], struct DU
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
 						system("cls");
-						SellecVillage(village, player, dungeon);
 						return;
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
@@ -264,7 +262,6 @@ void MonsterAtk(_Monster* monster, Player* player, _Village village[], struct DU
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
 						system("cls");
-						SellecVillage(village, player, dungeon);
 						return;
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
@@ -297,7 +294,6 @@ void MonsterAtk(_Monster* monster, Player* player, _Village village[], struct DU
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
 						system("cls");
-						SellecVillage(village, player, dungeon);
 						return;
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
@@ -320,7 +316,6 @@ void MonsterAtk(_Monster* monster, Player* player, _Village village[], struct DU
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
 						system("cls");
-						SellecVillage(village, player, dungeon);
 						return;
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
@@ -365,7 +360,6 @@ void MonsterAtk(_Monster* monster, Player* player, _Village village[], struct DU
 		{
 			printf("%s(이)가 사망했습니다!\n", player->PlayerName);
 			system("cls");
-			SellecVillage(village, player, dungeon);
 			return;
 		}
 		printf("플레이어의 HP : %d", player->Hp);
@@ -395,7 +389,6 @@ void PlayerAtkMonster(_Monster* monster, Player* player)
 	{
 		if (!isRun)
 		{
-			printf("\n\n플레이어가 공격할 차례입니다!\n");
 			printf("1. 스킬 사용\n2. 기본 공격\n3. 도망가기\n\n");
 			scanf("%d", &InputValue);
 

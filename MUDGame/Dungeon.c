@@ -16,6 +16,7 @@ int **map, mapSize, ** backupMap;    //동적할당할 맵과 할당된 맵의 크기
 int level = 1, timer = 0;    //현재 레벨, 타임아웃까지 남은 시간
 
 
+
 void DungeonInitial(_Dungeon dungeonArr[], Player* player, _Dungeon* dungeon)
 {
 	pMap[0] = " ";
@@ -25,18 +26,68 @@ void DungeonInitial(_Dungeon dungeonArr[], Player* player, _Dungeon* dungeon)
 	PrintDungeonIntro();
 	// 여기서 함수 -> 입장 -> 탈출을 반복해서 로직을 진행 시키고 배열 시작점은 여기만 알게끔 해주기
 	//SetMap(dungeon);
-	DungeonEntrance();
+	DungeonMatchup(player, dungeon);
 }
 
-void DungeonEntrance()
+
+void DungeonMatchup(Player* player, _Dungeon* dungeon)
 {
-	// 대전을 시작하는 로직 실행시켜주기
-	printf("대전을 시작합니다!\n");
-	
-	printf("몬스터의 공격 시작! \n");
-	// 몬스터 공격 로직
-	printf("플레이어의 공격 시작! \n");
-	// 플레이어의 공격 로직
+	while (true)
+	{
+		system("cls");
+		printf("앗! 몬스터가 등장했다!\n\n");
+		Sleep(1000);
+		// 대전을 시작하는 로직 실행시켜주기
+		printf("대전을 시작합니다!\n");
+		Sleep(1200);
+		struct MONSTER monster;
+
+		MonsterInitial(dungeon, &monster, player);
+
+		while (true)
+		{
+			system("cls");
+			printf("몬스터의 공격 시작! \n");
+			// 몬스터 공격 로직
+			MonsterAtk(&monster, player);
+			if (monster.Hp <= 0)
+			{
+				system("cls");
+				printf("\n%s(이)가 전투에서 승리했습니다!\n", player->PlayerName);
+				// 몬스터 종류에 따라 아이템 추가해주고 퀘스트 완료해주는 로직 만들어주기
+				Sleep(1200);
+				break;
+			}
+			else if (player->Hp <= 0)
+			{
+				system("cls");
+				printf("\n%s(이)가 전투에서 패배했습니다!\n", player->PlayerName);
+				printf("\n마을로 돌아갑니다!");
+
+				return;
+			}
+
+			printf("플레이어의 공격 시작! \n");
+			// 플레이어의 공격 로직
+			if (monster.Hp <= 0)
+			{
+				system("cls");
+				printf("\n%s(이)가 전투에서 승리했습니다!\n", player->PlayerName);
+				// 몬스터 종류에 따라 아이템 추가해주고 퀘스트 완료해주는 로직 만들어주기
+				Sleep(1200);
+				break;
+			}
+			else if (player->Hp <= 0)
+			{
+				system("cls");
+				printf("\n%s(이)가 전투에서 패배했습니다!\n", player->PlayerName);
+				printf("\n마을로 돌아갑니다!");
+
+				return;
+			}
+			Sleep(1000);
+		}
+	}
 }
 
 void PrintDungeonIntro()

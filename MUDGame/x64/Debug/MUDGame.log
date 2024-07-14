@@ -1,4 +1,16 @@
 ﻿  Dungeon.c
-D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\Dungeon.c(82,119): warning C4020: 'RollingArray': 실제 매개 변수가 너무 많습니다.
-D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\Dungeon.c(114,7): warning C4029: 선언된 정식 매개 변수 목록이 정의와 다릅니다.
+  Intro.c
+  MUDGame.c
+D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\MUDGame.c(10,8): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Map.c
+  Monster.c
+  Player.c
+  PlayerSkill.c
+D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\PlayerSkill.c(337,3): warning C4102: 'EIntermediate': 참조되지 않은 레이블입니다.
+D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\PlayerSkill.c(341,3): warning C4102: 'EBeginner': 참조되지 않은 레이블입니다.
+D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\PlayerSkill.c(345,3): warning C4102: 'EDefault': 참조되지 않은 레이블입니다.
+  Village.c
+D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(103,28): warning C4133: '함수': '_Village *'과(와) '_Dungeon *' 사이의 형식이 호환되지 않습니다.
+  WinAPIControl.c
+  코드를 생성하고 있습니다...
   MUDGame.vcxproj -> D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\x64\Debug\MUDGame.exe

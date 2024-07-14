@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Dungeon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|solutionrelative:MUDGame\\Dungeon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Monster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|solutionrelative:MUDGame\\Monster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Monster.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|solutionrelative:MUDGame\\Monster.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Dungeon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|solutionrelative:MUDGame\\Dungeon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|solutionrelative:MUDGame\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Map.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|solutionrelative:MUDGame\\Map.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Framework.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|solutionrelative:MUDGame\\Framework.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Dungeon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|solutionrelative:MUDGame\\Dungeon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\MUDGame.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|solutionrelative:MUDGame\\MUDGame.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Village.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -27,20 +47,8 @@
       "RelativeMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|solutionrelative:MUDGame\\Intro.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Dungeon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|solutionrelative:MUDGame\\Dungeon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Monster.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|solutionrelative:MUDGame\\Monster.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Village.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|solutionrelative:MUDGame\\Village.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\MUDGame.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A9A1039-0BDC-44BA-AD62-0B3BF721E4D5}|MUDGame\\MUDGame.vcxproj|solutionrelative:MUDGame\\MUDGame.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,50 +58,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "Map.c",
+              "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Map.c",
+              "RelativeDocumentMoniker": "MUDGame\\Map.c",
+              "ToolTip": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Map.c",
+              "RelativeToolTip": "MUDGame\\Map.c",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACcAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-07-13T12:40:52.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Monster.h",
               "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Monster.h",
               "RelativeDocumentMoniker": "MUDGame\\Monster.h",
               "ToolTip": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Monster.h",
               "RelativeToolTip": "MUDGame\\Monster.h",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAADsAAAAAAAAAAAAewFYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-07-13T11:15:10.605Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Village.c",
-              "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Village.c",
-              "RelativeDocumentMoniker": "MUDGame\\Village.c",
-              "ToolTip": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Village.c",
-              "RelativeToolTip": "MUDGame\\Village.c",
-              "ViewState": "AQIAAG8AAAAAAAAAAAAowGYAAAAiAAAA",
+              "DocumentIndex": 2,
+              "Title": "Monster.c",
+              "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Monster.c",
+              "RelativeDocumentMoniker": "MUDGame\\Monster.c",
+              "ToolTip": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Monster.c",
+              "RelativeToolTip": "MUDGame\\Monster.c",
+              "ViewState": "AQIAAJQAAAAAAAAAAAAewJoAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-07-13T09:13:53.101Z",
+              "WhenOpened": "2024-07-13T07:31:04.151Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "WinAPIControl.h",
-              "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\WinAPIControl.h",
-              "RelativeDocumentMoniker": "MUDGame\\WinAPIControl.h",
-              "ToolTip": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\WinAPIControl.h",
-              "RelativeToolTip": "MUDGame\\WinAPIControl.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-13T09:11:19.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "Intro.c",
               "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Intro.c",
               "RelativeDocumentMoniker": "MUDGame\\Intro.c",
@@ -101,49 +108,24 @@
               "RelativeToolTip": "MUDGame\\Intro.c",
               "ViewState": "AQIAAAcAAAAAAAAAAAAIwBgAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-07-13T09:11:14.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-13T09:11:14.503Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Dungeon.h",
               "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Dungeon.h",
               "RelativeDocumentMoniker": "MUDGame\\Dungeon.h",
               "ToolTip": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Dungeon.h",
               "RelativeToolTip": "MUDGame\\Dungeon.h",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAhwBoAAAAeAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAewCgAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-13T07:33:17.151Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Dungeon.c",
-              "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Dungeon.c",
-              "RelativeDocumentMoniker": "MUDGame\\Dungeon.c",
-              "ToolTip": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Dungeon.c",
-              "RelativeToolTip": "MUDGame\\Dungeon.c",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACYAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-07-13T07:31:34.28Z",
+              "WhenOpened": "2024-07-13T07:33:17.151Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Monster.c",
-              "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Monster.c",
-              "RelativeDocumentMoniker": "MUDGame\\Monster.c",
-              "ToolTip": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Monster.c",
-              "RelativeToolTip": "MUDGame\\Monster.c",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAFEAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-07-13T07:31:04.151Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "Village.h",
               "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Village.h",
               "RelativeDocumentMoniker": "MUDGame\\Village.h",
@@ -155,28 +137,82 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Framework.h",
               "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Framework.h",
               "RelativeDocumentMoniker": "MUDGame\\Framework.h",
               "ToolTip": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Framework.h",
               "RelativeToolTip": "MUDGame\\Framework.h",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACQAAAARAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB0AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-13T07:32:12.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-13T07:32:12.423Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "WinAPIControl.h",
+              "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\WinAPIControl.h",
+              "RelativeDocumentMoniker": "MUDGame\\WinAPIControl.h",
+              "ToolTip": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\WinAPIControl.h",
+              "RelativeToolTip": "MUDGame\\WinAPIControl.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-13T09:11:19.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "MUDGame.c",
               "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\MUDGame.c",
               "RelativeDocumentMoniker": "MUDGame\\MUDGame.c",
               "ToolTip": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\MUDGame.c",
               "RelativeToolTip": "MUDGame\\MUDGame.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-07-13T07:31:01.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Village.c",
+              "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Village.c",
+              "RelativeDocumentMoniker": "MUDGame\\Village.c",
+              "ToolTip": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Village.c",
+              "RelativeToolTip": "MUDGame\\Village.c",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAowGYAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-07-13T09:13:53.101Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Player.h",
+              "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Player.h",
+              "RelativeDocumentMoniker": "MUDGame\\Player.h",
+              "ToolTip": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Player.h",
+              "RelativeToolTip": "MUDGame\\Player.h",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAAAI0AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-13T13:47:53.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dungeon.c",
+              "DocumentMoniker": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Dungeon.c",
+              "RelativeDocumentMoniker": "MUDGame\\Dungeon.c",
+              "ToolTip": "D:\\VS_File\\InhaProject\\C_C\u002B\u002B\\MUDGame_TEXTRPG\\MUDGame\\Dungeon.c",
+              "RelativeToolTip": "MUDGame\\Dungeon.c",
+              "ViewState": "AQIAAOAAAAAAAAAAAAAuwPAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-07-13T07:31:34.28Z",
+              "EditorCaption": ""
             }
           ]
         }

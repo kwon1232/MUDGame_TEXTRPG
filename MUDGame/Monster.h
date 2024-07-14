@@ -76,7 +76,7 @@ typedef struct MONSTER
 void MonsterInitial(struct DUNGEON* dungeon, _Monster* monster, Player* player);
 void MonsterSetSkill(_Monster* monster);
 
-void MonsterAtk(_Monster* monster, Player* player, _Village village[], struct DUNGEON* dungeon[]);
+void MonsterAtk(_Monster* monster, Player* player);
 
 // Monster Atk effect to Player Quickness
 bool AvoidMonsterAttackWithPlayerQuickness(_Monster* monster, Player* player);

@@ -15,10 +15,18 @@ typedef enum MAPFLAG
 	MAP_FLAG_VISITED,
 }_MapFlag;
 
+typedef enum EDUNGEONTYPE
+{
+	EStempDungeon,
+	EFairyDungeon,
+	EDailDinoDungeon
+}_EDungeonType;
+
 typedef struct DUNGEON
 {
 	_Map Map;
 	_Direction Direction;
+	_EDungeonType DungeonType;
 	char DungeonName[120];
 	int DungeonNum;
 	//char* pMap[2];
@@ -30,7 +38,7 @@ typedef struct DUNGEON
 
 void DungeonInitial(_Dungeon dungeonArr[], Player* player, _Dungeon* dungeon);
 
-void DungeonEntrance();
+void DungeonMatchup(Player* player, _Dungeon* dungeon);
 
 void PrintDungeonIntro();
 
@@ -38,6 +46,6 @@ void PrintDungeonIntro();
 
 void SetMap(_Dungeon* dungeon);
 
-int** RollingArray(int MapArr[25][25], int num);
+int** RollingArray(int MapArr[25][25], int num, int block);
 
 
