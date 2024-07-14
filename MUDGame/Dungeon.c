@@ -69,6 +69,8 @@ void DungeonMatchup(Player* player, _Dungeon* dungeon)
 
 			printf("플레이어의 공격 시작! \n");
 			// 플레이어의 공격 로직
+			PlayerAtkMonster(&monster, player);
+
 			if (monster.Hp <= 0)
 			{
 				system("cls");

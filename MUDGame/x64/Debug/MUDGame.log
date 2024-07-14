@@ -1,16 +1,1 @@
-﻿  Dungeon.c
-  Intro.c
-  MUDGame.c
-D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\MUDGame.c(10,8): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Map.c
-  Monster.c
-  Player.c
-  PlayerSkill.c
-D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\PlayerSkill.c(337,3): warning C4102: 'EIntermediate': 참조되지 않은 레이블입니다.
-D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\PlayerSkill.c(341,3): warning C4102: 'EBeginner': 참조되지 않은 레이블입니다.
-D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\PlayerSkill.c(345,3): warning C4102: 'EDefault': 참조되지 않은 레이블입니다.
-  Village.c
-D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\MUDGame\Village.c(103,28): warning C4133: '함수': '_Village *'과(와) '_Dungeon *' 사이의 형식이 호환되지 않습니다.
-  WinAPIControl.c
-  코드를 생성하고 있습니다...
-  MUDGame.vcxproj -> D:\VS_File\InhaProject\C_C++\MUDGame_TEXTRPG\x64\Debug\MUDGame.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(439,5): error MSB8020: v143에 대한 빌드 도구(플랫폼 도구 집합 = 'v143')를 찾을 수 없습니다. v143 빌드 도구를 사용하여 빌드하려면 v143 빌드 도구를 설치하십시오.  [프로젝트] 메뉴를 선택하거나 솔루션을 마우스 오른쪽 단추로 클릭한 다음 "솔루션 대상 변경"을 선택하여 현재 Visual Studio 도구로 업그레이드할 수도 있습니다.

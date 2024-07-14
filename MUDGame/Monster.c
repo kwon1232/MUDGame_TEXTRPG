@@ -184,7 +184,6 @@ void MonsterAtk(_Monster* monster, Player* player)
 					if (player->Hp <= 0)
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
-						system("cls");
 						return;
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
@@ -206,7 +205,6 @@ void MonsterAtk(_Monster* monster, Player* player)
 					if (player->Hp <= 0)
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
-						system("cls");
 						return;
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
@@ -239,7 +237,6 @@ void MonsterAtk(_Monster* monster, Player* player)
 					if (player->Hp <= 0)
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
-						system("cls");
 						return;
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
@@ -261,7 +258,6 @@ void MonsterAtk(_Monster* monster, Player* player)
 					if (player->Hp <= 0)
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
-						system("cls");
 						return;
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
@@ -293,7 +289,6 @@ void MonsterAtk(_Monster* monster, Player* player)
 					if (player->Hp <= 0)
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
-						system("cls");
 						return;
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
@@ -315,7 +310,6 @@ void MonsterAtk(_Monster* monster, Player* player)
 					if (player->Hp <= 0)
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
-						system("cls");
 						return;
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
@@ -359,7 +353,6 @@ void MonsterAtk(_Monster* monster, Player* player)
 		if (player->Hp <= 0)
 		{
 			printf("%s(이)가 사망했습니다!\n", player->PlayerName);
-			system("cls");
 			return;
 		}
 		printf("플레이어의 HP : %d", player->Hp);
@@ -404,9 +397,7 @@ void PlayerAtkMonster(_Monster* monster, Player* player)
 			{
 				printf("%s(이)는 기본 공격을 성공했다!", player->PlayerName);
 				monster->Hp -= player->Attack;
-				system("cls");
-				// TODO:
-				// 대전 로직으로 돌아가기
+				printf("%s(이)는 d");
 				return;
 			}
 				break;
@@ -416,8 +407,8 @@ void PlayerAtkMonster(_Monster* monster, Player* player)
 				if (!isRun)
 				{
 					printf("\n\n%s는 도망갈 수 있었다!\n", player->PlayerName);
+					Sleep(1100);
 					system("cls");
-					// TODO:
 					// 대전 로직도 탈출하기
 					return;
 				}
@@ -447,9 +438,8 @@ void PlayerAtkMonster(_Monster* monster, Player* player)
 			{
 				printf("%s(이)는 기본 공격을 성공했다!", player->PlayerName);
 				monster->Hp -= player->Attack;
+				Sleep(1100);
 				system("cls");
-				// TODO:
-				// 대전 로직으로 돌아갈 수 있도록 대전 로직 만들기
 				return;
 			}
 				break;
