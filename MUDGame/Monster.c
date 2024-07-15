@@ -1,7 +1,7 @@
 #include "Framework.h"
 
 
-void MonsterInitial(struct DUNGEON* dungeon, _Monster* monster, Player* player)
+void MonsterInitial(struct DUNGEON* dungeon, _Monster* monster)
 {
 	char MonsterNameArr[7][120] =
 	{
@@ -19,12 +19,13 @@ void MonsterInitial(struct DUNGEON* dungeon, _Monster* monster, Player* player)
 	//		능력치 =  몬스터 레벨 + % n
 	// }
 	// 전투중 몬스터 스킬은 2번 일반 공격 후 랜덤 돌린 뒤 1이면 공격 0 이면 안함
-	if (dungeon->DungeonName == "오솔길 던전")
+	if (strcmp(dungeon->DungeonName, "오솔길 던전") == 0)
 	{
 		int DungeonLevel = rand() % 1 + 1;
 
 		monster->Level = DungeonLevel + rand() % 2;
 		monster->Hp = DungeonLevel + rand() % 3;
+		printf("\nMonster HP : %d", monster->Hp);
 		monster->Mp = DungeonLevel;
 		monster->Attack = DungeonLevel;
 
@@ -51,7 +52,7 @@ void MonsterInitial(struct DUNGEON* dungeon, _Monster* monster, Player* player)
 		break;
 		}
 	}
-	else if (dungeon->DungeonName == "숲 속 늪지대 던전")
+	else if (strcmp(dungeon->DungeonName, "숲 속 늪지대 던전") == 0)
 	{
 		int DungeonLevel = rand() % 1 + 2;
 
@@ -77,7 +78,7 @@ void MonsterInitial(struct DUNGEON* dungeon, _Monster* monster, Player* player)
 		break;
 		}
 	}
-	else if (dungeon->DungeonName == "얕은 해변가 던전")
+	else if (strcmp(dungeon->DungeonName, "얕은 해변가 던전") == 0)
 	{
 		int DungeonLevel = rand() % 1 + 3;
 
@@ -189,6 +190,11 @@ void MonsterAtk(_Monster* monster, Player* player)
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
 				}
+				printf("\n플레이어의 HP : %d", player->Hp);
+				printf("\n몬스터의 HP : %d", monster->Hp);
+				system("cls");
+				Sleep(1100);
+				return;
 				break;
 			case 1:
 				printf("\n\n몬스터가 %s 스킬을 사용했습니다!\n", monster->StempMonsterSkill.skillName[randSkill]);
@@ -209,8 +215,12 @@ void MonsterAtk(_Monster* monster, Player* player)
 						system("cls");
 						return;
 					}
-					printf("\n플레이어의 HP : %d", player->Hp);
 				}
+				printf("\n플레이어의 HP : %d", player->Hp);
+				printf("\n몬스터의 HP : %d", monster->Hp);
+				system("cls");
+				Sleep(1100);
+				return;
 				break;
 			}
 			// 원래 대전 로직으로 돌아가기
@@ -244,6 +254,11 @@ void MonsterAtk(_Monster* monster, Player* player)
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
 				}
+				printf("\n플레이어의 HP : %d", player->Hp);
+				printf("\n몬스터의 HP : %d", monster->Hp);
+				system("cls");
+				Sleep(1100);
+				return;
 				break;
 			case 1:
 				printf("\n\n몬스터가 %s 스킬을 사용했습니다!\n", monster->FairyMonsterSkill.skillName[randSkill]);
@@ -266,6 +281,11 @@ void MonsterAtk(_Monster* monster, Player* player)
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
 				}
+				printf("\n플레이어의 HP : %d", player->Hp);
+				printf("\n몬스터의 HP : %d", monster->Hp);
+				system("cls");
+				Sleep(1100);
+				return;
 				break;
 			}
 			// 원래 대전 로직으로 돌아가기
@@ -279,6 +299,7 @@ void MonsterAtk(_Monster* monster, Player* player)
 			{
 			case 0:
 				printf("\n\n몬스터가 %s 스킬을 사용했습니다!\n", monster->DailMonsterSkill.skillName[randSkill]);
+				Sleep(1200);
 				if (AvoidMonsterAttackWithPlayerQuickness(monster, player))
 				{
 					printf("%s(이)가 회피에 성공했습니다!\n", player->PlayerName);
@@ -289,18 +310,25 @@ void MonsterAtk(_Monster* monster, Player* player)
 				else
 				{
 					printf("\n\n몬스터의 스킬로 %s는 피해를 입었습니다!\n", player->PlayerName);
+					Sleep(1200);
 					player->Hp -= monster->DailMonsterSkill.CurseOfSwamp;
 					if (player->Hp <= 0)
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
+						Sleep(1200);
 						system("cls");
 						return;
 					}
-					printf("\n플레이어의 HP : %d", player->Hp);
 				}
+				printf("\n플레이어의 HP : %d", player->Hp);
+				printf("\n몬스터의 HP : %d", monster->Hp);
+				system("cls");
+				Sleep(1100);
+				return;
 				break;
 			case 1:
 				printf("\n\n몬스터가 %s 스킬을 사용했습니다!\n", monster->DailMonsterSkill.skillName[randSkill]);
+				Sleep(1200);
 				if (AvoidMonsterAttackWithPlayerQuickness(monster, player))
 				{
 					printf("%s(이)가 회피에 성공했습니다!\n", player->PlayerName);
@@ -315,11 +343,16 @@ void MonsterAtk(_Monster* monster, Player* player)
 					if (player->Hp <= 0)
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
+						Sleep(1200);
 						system("cls");
 						return;
 					}
-					printf("\n플레이어의 HP : %d", player->Hp);
 				}
+				printf("\n플레이어의 HP : %d", player->Hp);
+				printf("\n몬스터의 HP : %d", monster->Hp);
+				system("cls");
+				Sleep(1100);
+				return;
 				break;
 			}
 			// 원래 대전 로직으로 돌아가기
@@ -328,13 +361,25 @@ void MonsterAtk(_Monster* monster, Player* player)
 		break;
 		case EDino:
 		{
-			printf("\n\n몬스터가 %s 스킬을 사용했습니다!\n", monster->DailMonsterSkill.skillName[0]);
-			printf("디노가 던지는 흙탕물을 피해보세요!");
+			printf("\n\n디노가 %s 스킬을 사용했습니다!\n", monster->DailMonsterSkill.skillName[0]);
+			printf("디노의 스킬은 회피할 수 없습니다!");
 			// ToDo
 			// 비행기 놀이 구현
 			
-			
 			// 원래 대전 로직으로 돌아가기
+			printf("\n\n몬스터의 스킬로 %s는 피해를 입었습니다!\n", player->PlayerName);
+			player->Hp -= monster->DailMonsterSkill.ThrowingMud;
+			if (player->Hp <= 0)
+			{
+				printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
+				Sleep(1200);
+				system("cls");
+				return;
+			}
+			printf("\n플레이어의 HP : %d", player->Hp);
+			printf("\n몬스터의 HP : %d", monster->Hp);
+			system("cls");
+			Sleep(1100);
 			return;
 		}
 		break;
@@ -359,10 +404,13 @@ void MonsterAtk(_Monster* monster, Player* player)
 		if (player->Hp <= 0)
 		{
 			printf("%s(이)가 사망했습니다!\n", player->PlayerName);
+			Sleep(1200);
 			system("cls");
 			return;
 		}
 		printf("플레이어의 HP : %d", player->Hp);
+		printf("몬스터의 HP : %d", monster->Hp);
+		Sleep(1200);
 		system("cls");
 		
 		Sleep(1100);

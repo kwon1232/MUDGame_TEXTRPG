@@ -100,7 +100,7 @@ void VillageMainScene(_Village* village, Player* player, _Dungeon dungeon[])
         }
         else if (InputValue == 5)
         {
-            DungeonInitial(village, player, dungeon);
+            DungeonInitial(dungeon, player, dungeon);
         }
         printf("\n 다시 입력해주세요\n\n");
         system("cls");

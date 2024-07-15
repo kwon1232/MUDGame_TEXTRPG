@@ -42,7 +42,7 @@ void DungeonMatchup(Player* player, _Dungeon* dungeon)
 		Sleep(1200);
 		struct MONSTER monster;
 
-		MonsterInitial(dungeon, &monster, player);
+		MonsterInitial(dungeon, &monster);
 
 		while (true)
 		{
@@ -68,7 +68,9 @@ void DungeonMatchup(Player* player, _Dungeon* dungeon)
 			}
 
 			printf("플레이어의 공격 시작! \n");
+			PlayerAtkMonster(&monster, player);
 			// 플레이어의 공격 로직
+
 			if (monster.Hp <= 0)
 			{
 				system("cls");
@@ -175,6 +177,7 @@ int** RollingArray(int MapArr[25][25], int num, int block)
 	//printf("%d\n", num);
 	arr = (int**)malloc(sizeof(int*) * RMS);
 	for (int i = 0; i < RMS; i++)
+		
 		arr[i] = (int*)malloc(sizeof(int) * RMS);
 
 	for (int i = 0; i < num; i++) {

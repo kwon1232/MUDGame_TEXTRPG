@@ -73,7 +73,7 @@ typedef struct MONSTER
 }_Monster;
 
 
-void MonsterInitial(struct DUNGEON* dungeon, _Monster* monster, Player* player);
+void MonsterInitial(struct DUNGEON* dungeon, _Monster* monster);
 void MonsterSetSkill(_Monster* monster);
 
 void MonsterAtk(_Monster* monster, Player* player);

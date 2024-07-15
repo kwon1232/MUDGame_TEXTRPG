@@ -40,7 +40,7 @@ void playerInitialization(Player* player)
 	player->JobStepType = ENone_JobType;
 	player->Level = 1;
 	player->TrainingCenterCount = 5;
-
+	
 	playerQuestListInitial(player);
 
 	switch (player->PlayerJobType)
