@@ -69,18 +69,21 @@ void SelectPlayerJob(Player* player)
 	{
 		player->PlayerJobType = EWizard;
 		strcpy(player->PlayerJobName, "Wizard");
+		player->JobStepType = EDefault;
 		LastSelectPlayerJob(player);
 	}
 	else if (POS == 2)
 	{
 		player->PlayerJobType = EWarrior;
 		strcpy(player->PlayerJobName, "Warrior");
+		player->JobStepType = EDefault;
 		LastSelectPlayerJob(player);
 	}
 	else if (POS = 3)
 	{
 		player->PlayerJobType = EArcher;
 		strcpy(player->PlayerJobName, "Archer");
+		player->JobStepType = EDefault;
 		LastSelectPlayerJob(player);
 		
 	}
@@ -137,24 +140,24 @@ void SetRandomOfPlayerAbility(Player* player)
 		case EWizard:
 		{
 			player->Attack = rand() % 3 + 13;
-			player->Hp = rand() % 3 + 10;
-			player->Mp = rand() % 3 + 13;
+			player->MaxHp = rand() % 3 + 10;
+			player->MaxMp = rand() % 3 + 13;
 			player->Quickness = rand() % 3 + 5;
 		}
 		break;
 		case EWarrior:
 		{
 			player->Attack = rand() % 3 + 15;
-			player->Hp = rand() % 3 + 17;
-			player->Mp = rand() % 3 + 5;
+			player->MaxHp = rand() % 3 + 17;
+			player->MaxMp = rand() % 3 + 5;
 			player->Quickness = rand() % 3 + 5;
 		}
 		break;
 		case EArcher:
 		{
 			player->Attack = rand() % 3 + 12;
-			player->Hp = rand() % 3 + 12;
-			player->Mp = rand() % 3 + 10;
+			player->MaxHp = rand() % 3 + 12;
+			player->MaxMp = rand() % 3 + 10;
 			player->Quickness = rand() % 3 + 7;
 		}
 		break;
@@ -162,8 +165,8 @@ void SetRandomOfPlayerAbility(Player* player)
 
 		system("cls");
 		gotoxy(10, 3);printf("플레이어의 공격력 : %d", player->Attack);
-		gotoxy(10, 4);printf("플레이어의 체력 : %d", player->Hp);
-		gotoxy(10, 5);printf("플레이어의 마나 : %d", player->Mp);
+		gotoxy(10, 4);printf("플레이어의 체력 : %d", player->MaxHp);
+		gotoxy(10, 5);printf("플레이어의 마나 : %d", player->MaxMp);
 		gotoxy(10, 6);printf("플레이어의 민첩성 : %d", player->Quickness);
 		gotoxy(10, 7);printf("해당 능력치로 확정짓겠습니까?");
 		gotoxy(10, 8);printf("확정하겠다면 1을 아니라면 다른 정수를 입력해주세요.");

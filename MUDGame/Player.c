@@ -40,33 +40,34 @@ void playerInitialization(Player* player)
 	player->JobStepType = ENone_JobType;
 	player->Level = 1;
 	player->TrainingCenterCount = 5;
+	player->avoid = false;
+	player->monsterHuntingCount = 0;
+	player->dungeonplayIdx = 0;
 	
 	playerQuestListInitial(player);
+
+	player->SkillPoint = 0;
+	playerWizardSkillInitial(player);
+	playerWarriorSkillInitial(player);
+	playerArcherSkillInitial(player);
 
 	switch (player->PlayerJobType)
 	{
 	case EWizard:
 	{
-		playerWizardSkillInitial(player, player->SkillPoint);
+		playerWizardSkillReset(player, player->SkillPoint);
 	}
 	break;
 	case EWarrior:
 	{
-		playerWarriorSkillInitial(player, player->SkillPoint);
+		playerWarriorSkillReset(player, player->SkillPoint);
 	}
 	break;
 	case EArcher:
 	{
-		playerArcherSkillInitial(player, player->SkillPoint);
+		playerArcherSkillReset(player, player->SkillPoint);
 	}
 	break;
-	case ENone_JobType:
-	{
-		player->SkillPoint = 0;
-		playerWizardSkillInitial(player, player->SkillPoint);
-		playerWarriorSkillInitial(player, player->SkillPoint);
-		playerArcherSkillInitial(player, player->SkillPoint);
-	}
 	}
 }
 

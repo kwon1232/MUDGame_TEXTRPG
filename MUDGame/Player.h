@@ -134,12 +134,17 @@ typedef struct PLAYER
 	enum CharacterJobType PlayerJobType;
 	_P_Quest P_Quest;
 	int Hp;
+	int MaxHp;
 	int Mp;
+	int MaxMp;
 	int Attack;
 	int Quickness;
 	int SkillPoint;
 	int Level;
 	int TrainingCenterCount;
+	bool avoid;
+	int dungeonplayIdx;
+	int monsterHuntingCount;
 }Player;
 
 // 전체 맵 초기화 
@@ -157,29 +162,46 @@ void playerQuestListInitial(Player* player);
 
 
 // Wizard
-int playerWizardSkillInitial(Player* player, int SkillPoint);
+int playerWizardSkillReset(Player* player, int SkillPoint);
 
-int playerWizardDefaultSkillInitial(Player* player, int SkillPoint);
-int playerWizardBeginnerSkillInitial(Player* player, int SkillPoint);
-int playerWizardIntermediateSkillInitial(Player* player, int SkillPoint);
+int playerWizardDefaultSkillReset(Player* player, int SkillPoint);
+int playerWizardBeginnerSkillReset(Player* player, int SkillPoint);
+int playerWizardIntermediateSkillReset(Player* player, int SkillPoint);
 
 // Warrior
-int playerWarriorSkillInitial(Player* player, int SkillPoint);
+int playerWarriorSkillReset(Player* player, int SkillPoint);
 
-int playerWarriorDefaultSkillInitial(Player* player, int SkillPoint);
-int playerWarriorBeginnerSkillInitial(Player* player, int SkillPoint);
-int playerWarriorIntermediateSkillInitial(Player* player, int SkillPoint);
+int playerWarriorDefaultSkillReset(Player* player, int SkillPoint);
+int playerWarriorBeginnerSkillReset(Player* player, int SkillPoint);
+int playerWarriorIntermediateSkillReset(Player* player, int SkillPoint);
+
 
 // Archer
-int playerArcherSkillInitial(Player* player, int SkillPoint);
+int playerArcherSkillReset(Player* player, int SkillPoint);
 
-int playerArcherDefaultSkillInitial(Player* player, int SkillPoint);
-int playerArcherBeginnerSkillInitial(Player* player, int SkillPoint);
-int playerArcherIntermediateSkillInitial(Player* player, int SkillPoint);
+int playerArcherDefaultSkillReset(Player* player, int SkillPoint);
+int playerArcherBeginnerSkillReset(Player* player, int SkillPoint);
+int playerArcherIntermediateSkillReset(Player* player, int SkillPoint);
 
+// All Job Skill Initial
+void playerWizardSkillInitial(Player* player);
+void playerWarriorSkillInitial(Player* player);
+void playerArcherSkillInitial(Player* player);
+
+
+
+
+//Skill Update
 
 // Player Skill List
 void PlayerSkillListPrint(Player* player);
+// Player Skill Up
+void PlayerSkillUp(Player* player);
 
 
+//Add Item
+void PlayerAddItem(Player* player, struct MONSTER* monster);
 
+
+// Quest
+void CheckPlayerQuestList(Player* player);

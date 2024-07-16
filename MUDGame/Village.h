@@ -58,8 +58,10 @@ void VillageMainScene(_Village* village, Player* player, _Dungeon dungeon[]);
 void TrainingCenterIntro(_Village* village, Player* player, _Dungeon dungeon[]);
 void HPTrainingCenter(Player* player);
 void MPTrainingCenter(Player* player);
-void SkillTrainingCenter(Player* player);
+void SkillPointTrainingCenter(Player* player);
 void QuicknessTrainingCenter(Player* player);
+
+void SkillUpdate(Player* player);
 
 void QuestIntro(_Village* village, Player* player, _Dungeon dungeon[]);
 bool QuestAccept(Player* player, char QuestNum[]);

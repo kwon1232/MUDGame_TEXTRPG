@@ -17,24 +17,47 @@ int level = 1, timer = 0;    //현재 레벨, 타임아웃까지 남은 시간
 
 
 
-void DungeonInitial(_Dungeon dungeonArr[], Player* player, _Dungeon* dungeon)
+void DungeonInitial(_Dungeon dungeonArr[], Player* player)
 {
 	pMap[0] = " ";
 	pMap[1] = "■";
 	level = 1;
 	timer = 0;
-	PrintDungeonIntro();
+	player->TrainingCenterCount = 5;
+
+	int DungeonLevel = 0;
+	player->Hp = player->MaxHp;
+	player->Mp = player->MaxMp;
+
+	if (player->Level <= 1)
+	{
+		PrintDungeonIntro(&dungeonArr[DungeonLevel]);
+		DungeonMatchup(player, &dungeonArr[DungeonLevel]);
+	}
 	// 여기서 함수 -> 입장 -> 탈출을 반복해서 로직을 진행 시키고 배열 시작점은 여기만 알게끔 해주기
 	//SetMap(dungeon);
-	DungeonMatchup(player, dungeon);
-}
 
+}
 
 void DungeonMatchup(Player* player, _Dungeon* dungeon)
 {
 	while (true)
 	{
 		system("cls");
+		if (player->monsterHuntingCount == 3)
+		{
+			system("cls");
+			printf("\n%s(이)는 마을로 돌아갈 수 있습니다.\n", player->PlayerName);
+			player->Hp = player->MaxHp;
+			player->Mp = player->MaxMp;
+			Sleep(1200);
+			int num;
+			printf("\n1. 마을로 돌아간다.\n");
+			printf("2. 계속 던전을 탐험한다\n");
+			scanf("%d", &num);
+			if (num == 1)
+				return;
+		}
 		printf("앗! 몬스터가 등장했다!\n\n");
 		Sleep(1000);
 		// 대전을 시작하는 로직 실행시켜주기
@@ -68,18 +91,21 @@ void DungeonMatchup(Player* player, _Dungeon* dungeon)
 			}
 
 			printf("플레이어의 공격 시작! \n");
-			PlayerAtkMonster(&monster, player);
 			// 플레이어의 공격 로직
-<<<<<<< HEAD
-=======
 			PlayerAtkMonster(&monster, player);
->>>>>>> f41bf2315132d94b333571fa3c1ccb0a6b01ee6c
+			if (player->avoid)
+			{
+				player->monsterHuntingCount++;
+				break;
+			}
 
 			if (monster.Hp <= 0)
 			{
 				system("cls");
 				printf("\n%s(이)가 전투에서 승리했습니다!\n", player->PlayerName);
+				player->monsterHuntingCount++;
 				// 몬스터 종류에 따라 아이템 추가해주고 퀘스트 완료해주는 로직 만들어주기
+				PlayerAddItem(player, &monster);
 				Sleep(1200);
 				break;
 			}
@@ -92,18 +118,19 @@ void DungeonMatchup(Player* player, _Dungeon* dungeon)
 				return;
 			}
 			Sleep(1000);
+
 		}
 	}
 }
 
-void PrintDungeonIntro()
+void PrintDungeonIntro(_Dungeon* dungeon)
 {
 	// 어느 던전에 입장했는지?
 	// 던전 인트로로 쓸 수 있는 이쁜 그림!
 	// 안해두 괜찮아요~
 	system("cls");
 	system("cls");
-	printf("/|\\^._.^/|\\ 던전에 입장하셨습니다! /|\\^._.^/|\\\n");
+	printf("/|\\^._.^/|\\ %s에 입장하셨습니다! /|\\^._.^/|\\\n", dungeon->DungeonName);
 	Sleep(1000);
 	system("cls");
 
@@ -148,7 +175,6 @@ void SetMap(_Dungeon* dungeon)
 				for (int AW = RMS * j, width = 0; width < RMS; width++, AW++) {
 					map[AH][AW] = arr[height][width];
 				}
-				
 			}
 		}
 	}

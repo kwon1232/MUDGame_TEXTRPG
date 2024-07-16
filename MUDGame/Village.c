@@ -97,10 +97,20 @@ void VillageMainScene(_Village* village, Player* player, _Dungeon dungeon[])
         else if (InputValue == 4)
         {
             // 스킬 올려주는 함수 구현
+            if (player->SkillPoint <= 0)
+            {
+                printf("\n스킬 포인트를 모두 소진했습니다!\n");
+                Sleep(1000);
+                system("cls");
+            }
+            else
+            {
+                SkillUpdate(player);
+            }
         }
         else if (InputValue == 5)
         {
-            DungeonInitial(dungeon, player, dungeon);
+            DungeonInitial(dungeon, player);
         }
         printf("\n 다시 입력해주세요\n\n");
         system("cls");
@@ -157,7 +167,7 @@ void TrainingCenterIntro(_Village* village, Player* player, _Dungeon dungeon[])
             system("cls");
             printf("\n스킬훈련장에 입장하셨습니다.\n");
             Sleep(200);
-            SkillTrainingCenter(player);
+            SkillPointTrainingCenter(player);
             player->SkillPoint--;
         }
         else if (InputValue == 4 && player->TrainingCenterCount > 0)
@@ -232,7 +242,7 @@ void MPTrainingCenter(Player* player)
     system("cls");
 }
 
-void SkillTrainingCenter(Player* player)
+void SkillPointTrainingCenter(Player* player)
 {
     time_t start_time;
 
@@ -282,6 +292,12 @@ void QuicknessTrainingCenter(Player* player)
     system("cls");
 }
 
+void SkillUpdate(Player* player)
+{
+    PlayerSkillListPrint(player);
+    PlayerSkillUp(player);
+}
+
 
 void QuestIntro(_Village* village, Player* player, _Dungeon dungeon[])
 {
@@ -322,14 +338,14 @@ void QuestIntro(_Village* village, Player* player, _Dungeon dungeon[])
             switch (NumOfQuestList)
             {
             case 2:
-                printf("퀘스트 넘버 : Q.D - 2\n\n");
+                printf("퀘스트 넘버 : Q.D-2\n\n");
                 printf("타락한 나무 정령을 무찔러주세요!\n");
                 printf("타락한 나무 정령들 때문에 오솔길 밖으로 나갈 수 없어요.\n\n");
                 printf("목표 : 깊은 숲 속의 타락한 나무 정령 3마리 처지하기\n");
                 printf("보상 : 80골드, 마나 포션 3개, 체력 포션 3개\n");
                 
             case 1:
-                printf("퀘스트 넘버 : Q.D - 1\n\n");
+                printf("퀘스트 넘버 : Q.D-1\n\n");
                 printf("다크 스텀프를 잡아주세요.\n");
                 printf("다크 스텀프는 오솔길을 장악하는 보스입니다.\n");
                 printf("다크 스텀프 때문에 옆마을로 넘어갈 수 없어요!\n\n");
@@ -346,7 +362,7 @@ void QuestIntro(_Village* village, Player* player, _Dungeon dungeon[])
             {
             case 2:
 
-                printf("퀘스트 넘버 : Q.B - 2\n\n");
+                printf("퀘스트 넘버 : Q.B-2\n\n");
                 printf("얕은 늪에는 현혹된 악어 다일이 살고있어\n");
                 printf("다일은 늪 속에서 살기 때문에 내가 직접 잡기엔 너무 어려워\n");
                 printf("혹시 너가 도와주겠니 ?\n\n");
@@ -355,7 +371,7 @@ void QuestIntro(_Village* village, Player* player, _Dungeon dungeon[])
 
 
             case 1:
-                printf("퀘스트 넘버 : Q.B - 1\n\n");
+                printf("퀘스트 넘버 : Q.B-1\n\n");
                 printf("깊은 숲 속에 나무 정령들을 타락시킨건\n");
                 printf("셰이드라는 악령 때문이라던데,\n");
                 printf("셰이드를 처치해줄 수 있나요 ?\n\n");
@@ -370,7 +386,7 @@ void QuestIntro(_Village* village, Player* player, _Dungeon dungeon[])
             switch (NumOfQuestList)
             {
             case 2:
-                printf("퀘스트 넘버 : Q.I - 2\n\n");
+                printf("퀘스트 넘버 : Q.I-2\n\n");
                 printf("얕은 늪에는 디노가 살고있지,\n");
                 printf("근데 그거 알아 ?\n");
                 printf("디노를 처지해주면 조금 평화롭지 않을까 ?\n\n");
@@ -379,12 +395,12 @@ void QuestIntro(_Village* village, Player* player, _Dungeon dungeon[])
                 printf("보상 : 280골드, 마나 포션 4개, 체력 포션 4개\n");
 
             case 1:
-                printf("퀘스트 넘버 : Q.I - 1\n\n");
+                printf("퀘스트 넘버 : Q.I-1\n\n");
                 printf("얕은 늪에는 다일이 살고있다는 거 너도 알고있지 ?\n");
                 printf("다일 또는 디노를 처치하면 에메랄드를 구할 수 있다는 소문이 돌아...\n");
                 printf("보석상에서 디노를 처치한 에메랄드를 가져오면 개당 100골드나 준다네!\n\n");
 
-                printf("목표 : 디노 또는 다일을 처치해서 에메랄드 2개 구해오기\n");
+                printf("목표 : 디노 또는 다일을 처치해서 에메랄드 2개 구하기\n");
                 printf("보상 : 200골드, 마나 포션 4개, 체력 포션 4개\n");
 
                 break;
@@ -422,14 +438,18 @@ void QuestIntro(_Village* village, Player* player, _Dungeon dungeon[])
     }
 }
 
+// Player Quest List Check
 bool QuestAccept(Player* player, char QuestNum[])
 {
     for (int i = 0; i < QuestListCount; i++)
     {
         if (strcmp(player->P_Quest.QuestListStr[i], QuestNum) == 0)
         {
-            player->P_Quest.CheckAcceptQuestList[i] = true;
-            return true;
+            if (player->P_Quest.CheckAcceptQuestList[i] == false)
+            {
+                player->P_Quest.CheckAcceptQuestList[i] = true;
+                return true;
+            }
         }
     }
     return false;
@@ -560,13 +580,27 @@ void StoreIntro(_Village* village, Player* player, _Dungeon dungeon[])
                 village->StoreType = EWood;
                 if (player->PInventory.wood >= 1)
                 {
+                    int saleNum = 0;
+                    while (true)
+                    {
+                        printf("판매 전 골드 : %d\n", player->PInventory.gold);
+                        printf("\n몇 개를 판매하시겠습니까? \n");
+                        scanf("%d", &saleNum);
+                        if (player->PInventory.wood >= saleNum)
+                            break;
+                        else
+                        {
+                            printf("\n입력하신 개수가 너무 많습니다!\n");
+                            system("cls");
+                        }
+                    }
                     printf("판매 전 골드 : %d\n", player->PInventory.gold);
-                    player->PInventory.gold += 30;
+                    player->PInventory.gold += (30 * saleNum);
                     printf("판매 후 골드 : %d\n", player->PInventory.gold);
                     printf("\n\n");
+                    printf("판매 전 나뭇가지 갯수 : %d / %d\n", player->PInventory.wood, player->PInventory.MaxOwnItem);
+                    player->PInventory.HPpotion-= saleNum;
                     printf("판매 후 나뭇가지 갯수 : %d / %d\n", player->PInventory.wood, player->PInventory.MaxOwnItem);
-                    player->PInventory.HPpotion++;
-                    printf("구매 후 나뭇가지 갯수 : %d / %d\n", player->PInventory.wood, player->PInventory.MaxOwnItem);
                     Sleep(1200);
                     printf("\n메뉴로 돌아갑니다!\n");
                     Sleep(1200);
@@ -578,20 +612,32 @@ void StoreIntro(_Village* village, Player* player, _Dungeon dungeon[])
                 village->StoreType = EEmerald;
                 if (player->PInventory.emerald >= 1)
                 {
-                    printf("판매 전 골드 : %d\n", player->PInventory.gold);
-                    player->PInventory.gold += 60;
+                    int saleNum = 0;
+                    while (true)
+                    {
+                        printf("판매 전 골드 : %d\n", player->PInventory.gold);
+                        printf("\n몇 개를 판매하시겠습니까? \n");
+                        scanf("%d", &saleNum);
+                        if (player->PInventory.emerald >= saleNum)
+                            break;
+                        else
+                        {
+                            printf("\n입력하신 개수가 너무 많습니다!\n");
+                            system("cls");
+                        }
+                    }
+                    player->PInventory.gold += (saleNum * 60);
                     printf("판매 후 골드 : %d\n", player->PInventory.gold);
                     printf("\n\n");
+                    printf("판매 전 에메랄드 갯수 : %d / %d\n", player->PInventory.emerald, player->PInventory.MaxOwnItem);
+                    player->PInventory.emerald-= saleNum;
                     printf("판매 후 에메랄드 갯수 : %d / %d\n", player->PInventory.emerald, player->PInventory.MaxOwnItem);
-                    player->PInventory.HPpotion++;
-                    printf("구매 후 에메랄드 갯수 : %d / %d\n", player->PInventory.emerald, player->PInventory.MaxOwnItem);
                     Sleep(1200);
                     printf("\n메뉴로 돌아갑니다!\n");
                     Sleep(1200);
                     system("cls");
                 }
             }
-
 
             printf("\n메뉴로 돌아갑니다!\n");
             Sleep(700);

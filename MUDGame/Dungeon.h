@@ -36,11 +36,11 @@ typedef struct DUNGEON
 }_Dungeon;
 
 
-void DungeonInitial(_Dungeon dungeonArr[], Player* player, _Dungeon* dungeon);
+void DungeonInitial(_Dungeon dungeonArr[], Player* player);
 
 void DungeonMatchup(Player* player, _Dungeon* dungeon);
 
-void PrintDungeonIntro();
+void PrintDungeonIntro(_Dungeon* dungeon);
 
 // ¹Ì·Î ¸Ê
 

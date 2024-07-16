@@ -20,12 +20,12 @@
 #include "WinAPIControl.h"
 
 
+#include "PlayerSkill.h"
 #include "Player.h"
 #include "Intro.h"
 
 #include "enums.h"
 
-#include "PlayerSkill.h"
 
 #include "Map.h"
 
