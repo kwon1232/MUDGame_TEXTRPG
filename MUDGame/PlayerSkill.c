@@ -690,25 +690,61 @@ void PlayerAddItem(Player* player, struct MONSTER* monster)
 		// Q.D-1 체크 로직
 		if (monster->monsterType == EDarkStemp && player->P_Quest.CheckAcceptQuestList[2] == true)
 		{
-			player->P_Quest.CheckCompleteQuestList[2] = true;
-			printf("\n\n플레이어가 Q.D-1 퀘스트를 완료했습니다!");
-			Sleep(1200);
-			system("cls");
+			player->P_Quest.DarkStempNum++;
+			if (player->P_Quest.DarkStempNum >= 3)
+			{
+				player->P_Quest.CheckCompleteQuestList[2] = true;
+				printf("\n\n플레이어가 Q.D-1 퀘스트를 완료했습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 골드가 +80 되었습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 HP포션이 +3 되었습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 MP포션이 +3 되었습니다!");
+				player->PInventory.gold += 80;
+				player->PInventory.HPpotion += 3;
+				player->PInventory.MPpotion += 3;
+				Sleep(1200);
+				system("cls");
+			}
 		}
 		// Q.N-2 체크 로직
 		if (player->P_Quest.CheckAcceptQuestList[1] == true)
 		{
-			player->P_Quest.DarkStempNum++;
+
+			if (player->PInventory.wood >= 3 )
+			{
+				player->P_Quest.CheckCompleteQuestList[1] = true;
+				player->PInventory.wood -= 3;
+				printf("\n\n플레이어가 Q.N-2 퀘스트를 완료했습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 나무가 -3 되었습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 골드가 +50 되었습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 HP포션이 +5 되었습니다!");
+				player->PInventory.gold += 50;
+				player->PInventory.HPpotion += 5;
+				Sleep(1200);
+				system("cls");
+			}
+		}
+		// Q.N-1 체크 로직
+		if (player->P_Quest.CheckAcceptQuestList[0] == true && monster->monsterType == EXStemp)
+		{
+			player->P_Quest.XStemp++;
 			if (player->P_Quest.DarkStempNum >= 3)
 			{
 				player->P_Quest.CheckCompleteQuestList[1] = true;
 				player->PInventory.wood -= 3;
 				printf("\n\n플레이어가 Q.N-2 퀘스트를 완료했습니다!");
-				printf("\n\n플레이어의 인벤토리에 나무가 -3 되었습니다!");
-				player->P_Quest.DarkStempNum = 0;
-				player->PInventory.gold += 80;
-				player->PInventory.HPpotion += 3;
-				player->PInventory.MPpotion += 3;
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 골드가 +50 되었습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 HP포션이 +5 되었습니다!");
+				player->P_Quest.XStemp = 0;
+				player->PInventory.gold += 50;
+				player->PInventory.HPpotion += 5;
 				Sleep(1200);
 				system("cls");
 			}
@@ -722,12 +758,47 @@ void PlayerAddItem(Player* player, struct MONSTER* monster)
 		// Q.B-1 체크 로직
 		if (monster->monsterType == EShadeFairy && player->P_Quest.CheckAcceptQuestList[4] == true)
 		{
-			if (player->P_Quest.ShadeFairyNum)
+			player->P_Quest.ShadeFairyNum++;
+			if (player->P_Quest.ShadeFairyNum >= 3)
 			{
-				//TODO
+				player->P_Quest.CheckCompleteQuestList[4] = true;
+				printf("\n\n플레이어가 Q.B-1 퀘스트를 완료했습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 골드가 +110 되었습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 HP포션이 +4 되었습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 MP포션이 +4 되었습니다!");
+				player->P_Quest.ShadeFairyNum = 0;
+				player->PInventory.gold += 110;
+				player->PInventory.HPpotion += 4;
+				player->PInventory.MPpotion += 4;
+				Sleep(1200);
+				system("cls");
 			}
 		}
-		// 나무 정령이라면 퀘스트 체크
+		// Q.D-2 체크 로직
+		if (monster->monsterType == EFallenTreeFairy && player->P_Quest.CheckAcceptQuestList[4] == true)
+		{
+			player->P_Quest.FallenTreeFairy++;
+			if (player->P_Quest.FallenTreeFairy >= 3)
+			{
+				player->P_Quest.CheckCompleteQuestList[4] = true;
+				printf("\n\n플레이어가 Q.B-1 퀘스트를 완료했습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 골드가 +110 되었습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 HP포션이 +4 되었습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 MP포션이 +4 되었습니다!");
+				player->P_Quest.FallenTreeFairy = 0;
+				player->PInventory.gold += 110;
+				player->PInventory.HPpotion += 4;
+				player->PInventory.MPpotion += 4;
+				Sleep(1200);
+				system("cls");
+			}
+		}
 		break;
 
 	case EDail:
@@ -743,9 +814,53 @@ void PlayerAddItem(Player* player, struct MONSTER* monster)
 		player->PInventory.emerald += 10;
 		printf("\n\n플레이어의 인벤토리에 골드가 +40 되었습니다!");
 		printf("\n\n플레이어의 인벤토리에 에메랄드가 +20 되었습니다!");
-		// 몬스터가 디노라면 퀘스트 체크
-		// 에메랄드 2개 뺴주고 퀘스트 완료 뜨기
-		// 다일이라면 퀘스트 체크 
+		// Q.I-1 실행 로직
+		if (monster->monsterType == EDail && player->P_Quest.CheckAcceptQuestList[6])
+		{
+			player->P_Quest.Dail++;
+			if (player->P_Quest.Dail >= 1)
+			{
+				player->P_Quest.CheckCompleteQuestList[6] = true;
+				printf("\n\n플레이어가 Q.I-1 퀘스트를 완료했습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 골드가 +200 되었습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 HP포션이 +4 되었습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 MP포션이 +4 되었습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 에메랄드가 -1 되었습니다!");
+				player->P_Quest.Dail = 0;
+				player->PInventory.gold += 200;
+				player->PInventory.HPpotion += 4;
+				player->PInventory.MPpotion += 4;
+				player->PInventory.emerald -= 1;
+				Sleep(1200);
+				system("cls");
+			}
+		}
+		// Q.I-2 완료
+		if (monster->monsterType == EDino && player->P_Quest.CheckAcceptQuestList[7])
+		{
+			player->P_Quest.Dail++;
+			if (player->P_Quest.Dail >= 1)
+			{
+				player->P_Quest.CheckCompleteQuestList[7] = true;
+				printf("\n\n플레이어가 Q.I-2 퀘스트를 완료했습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 골드가 +280 되었습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 HP포션이 +4 되었습니다!");
+				Sleep(550);
+				printf("\n\n플레이어의 인벤토리에 MP포션이 +4 되었습니다!");
+				player->P_Quest.Dail = 0;
+				player->PInventory.gold += 280;
+				player->PInventory.HPpotion += 4;
+				player->PInventory.MPpotion += 4;
+				Sleep(1200);
+				system("cls");
+			}
+		}
 		break;
 	}
 }

@@ -46,6 +46,9 @@ void playerInitialization(Player* player)
 
 	player->P_Quest.DarkStempNum = 0;
 	player->P_Quest.ShadeFairyNum = 0;
+	player->P_Quest.FallenTreeFairy = 0;
+	player->P_Quest.Dail = 0;
+	player->P_Quest.XStemp = 0;
 	
 	playerQuestListInitial(player);
 

@@ -123,6 +123,9 @@ typedef struct P_QUEST
 	char QuestListStr[QuestListCount][40];
 	int DarkStempNum;
 	int ShadeFairyNum;
+	int FallenTreeFairy;
+	int Dail;
+	int XStemp;
 }_P_Quest;
 
 typedef struct PLAYER

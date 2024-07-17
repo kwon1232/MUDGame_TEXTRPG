@@ -188,6 +188,8 @@ void MonsterAtk(_Monster* monster, Player* player)
 						return;
 					}
 					printf("\n플레이어의 HP : %d", player->Hp);
+					Sleep(1100);
+					system("cls");
 				}
 				printf("\n플레이어의 HP : %d", player->Hp);
 				printf("\n몬스터의 HP : %d", monster->Hp);
@@ -210,6 +212,8 @@ void MonsterAtk(_Monster* monster, Player* player)
 					if (player->Hp <= 0)
 					{
 						printf("\n\n%s(이)가 사망했습니다!\n", player->PlayerName);
+						Sleep(1100);
+						system("cls");
 						return;
 					}
 				}
