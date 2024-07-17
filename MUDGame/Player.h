@@ -121,6 +121,8 @@ typedef struct P_QUEST
 	bool CheckCompleteQuestList[QuestListCount];
 	bool CheckAcceptQuestList[QuestListCount];
 	char QuestListStr[QuestListCount][40];
+	int DarkStempNum;
+	int ShadeFairyNum;
 }_P_Quest;
 
 typedef struct PLAYER

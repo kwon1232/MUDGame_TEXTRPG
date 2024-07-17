@@ -687,15 +687,46 @@ void PlayerAddItem(Player* player, struct MONSTER* monster)
 		player->PInventory.gold += 5;
 		printf("\n\n플레이어의 인벤토리에 나무가 +5 되었습니다!");
 		printf("\n\n플레이어의 인벤토리에 골드가 +5 되었습니다!");
-		// 다크 스텀프라면 퀘스트 체크
-		// 나뭇가지 -3개하고 퀘스트 체크
+		// Q.D-1 체크 로직
+		if (monster->monsterType == EDarkStemp && player->P_Quest.CheckAcceptQuestList[2] == true)
+		{
+			player->P_Quest.CheckCompleteQuestList[2] = true;
+			printf("\n\n플레이어가 Q.D-1 퀘스트를 완료했습니다!");
+			Sleep(1200);
+			system("cls");
+		}
+		// Q.N-2 체크 로직
+		if (player->P_Quest.CheckAcceptQuestList[1] == true)
+		{
+			player->P_Quest.DarkStempNum++;
+			if (player->P_Quest.DarkStempNum >= 3)
+			{
+				player->P_Quest.CheckCompleteQuestList[1] = true;
+				player->PInventory.wood -= 3;
+				printf("\n\n플레이어가 Q.N-2 퀘스트를 완료했습니다!");
+				printf("\n\n플레이어의 인벤토리에 나무가 -3 되었습니다!");
+				player->P_Quest.DarkStempNum = 0;
+				player->PInventory.gold += 80;
+				player->PInventory.HPpotion += 3;
+				player->PInventory.MPpotion += 3;
+				Sleep(1200);
+				system("cls");
+			}
+		}
 		break;
 	
 	case EFallenTreeFairy:
 	case EShadeFairy:
 		player->PInventory.gold += 20;
 		printf("\n\n플레이어의 인벤토리에 골드가 +20 되었습니다!");
-		// 셰이드라면 퀘스트 체크
+		// Q.B-1 체크 로직
+		if (monster->monsterType == EShadeFairy && player->P_Quest.CheckAcceptQuestList[4] == true)
+		{
+			if (player->P_Quest.ShadeFairyNum)
+			{
+				//TODO
+			}
+		}
 		// 나무 정령이라면 퀘스트 체크
 		break;
 

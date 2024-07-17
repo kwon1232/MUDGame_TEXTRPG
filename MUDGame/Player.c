@@ -43,6 +43,9 @@ void playerInitialization(Player* player)
 	player->avoid = false;
 	player->monsterHuntingCount = 0;
 	player->dungeonplayIdx = 0;
+
+	player->P_Quest.DarkStempNum = 0;
+	player->P_Quest.ShadeFairyNum = 0;
 	
 	playerQuestListInitial(player);
 
