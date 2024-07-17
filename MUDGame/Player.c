@@ -36,7 +36,7 @@ void controlCharacter(Player* player)
 void playerInitialization(Player* player)
 {
 	playerInventoryInitial(player);
-	player->SkillPoint = 3;
+	player->SkillPoint = 5;
 	player->JobStepType = ENone_JobType;
 	player->Level = 1;
 	player->TrainingCenterCount = 5;

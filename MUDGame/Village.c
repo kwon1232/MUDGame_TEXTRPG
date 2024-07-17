@@ -47,7 +47,7 @@ void VillageIntro(_Village* village, Player* player, _Dungeon dungeon[])
 {
 
     village->Map.MapType = EVillage;
-    printf("Village %d: %s\n", village->VillageNum,village->VillageName);
+    printf("Village %d: %s\n", village->VillageNum + 1,village->VillageName);
     printf("            /---------------------\\\n");
     printf("           /-----------------------\\\n");
     printf("          /-------------------------\\\n");
@@ -73,6 +73,7 @@ void VillageMainScene(_Village* village, Player* player, _Dungeon dungeon[])
     int InputValue = 0;
     while (true)
     {
+        player->SkillPoint += 5;
         printf("1. 훈련장\n2. 상점\n3. 퀘스트\n4. 스킬창 열기\n5. 던전 모험하기\n\n");
         printf("입력 : ");
         scanf("%d", &InputValue);
@@ -80,19 +81,16 @@ void VillageMainScene(_Village* village, Player* player, _Dungeon dungeon[])
         {
             village->VillageType = TrainingCenter;
             TrainingCenterIntro(village, player, dungeon);
-            break;
         }
         else if (InputValue == 2)
         {
             village->VillageType = Store;
             StoreIntro(village, player, dungeon);
-            break;
         }
         else if (InputValue == 3)
         {
             village->VillageType = Quest;
             QuestIntro(village, player, dungeon);
-            break;
         }
         else if (InputValue == 4)
         {
@@ -139,7 +137,6 @@ void TrainingCenterIntro(_Village* village, Player* player, _Dungeon dungeon[])
             system("cls");
             printf("\n\n마을에서 충분히 훈련하셨습니다!\n");
             printf("\n마을 밖에서 모험을 즐겨주세요!\n");
-            VillageMainScene(village, player, dungeon);
             break;
         }
 
@@ -161,14 +158,14 @@ void TrainingCenterIntro(_Village* village, Player* player, _Dungeon dungeon[])
             MPTrainingCenter(player);
             player->TrainingCenterCount--;
         }
-        else if (InputValue == 3 && player->SkillPoint > 0)
+        else if (InputValue == 3 && player->TrainingCenterCount > 0)
         {
             village->TrainingCenterType = ESkillTrainingCenter;
             system("cls");
             printf("\n스킬훈련장에 입장하셨습니다.\n");
             Sleep(200);
             SkillPointTrainingCenter(player);
-            player->SkillPoint--;
+            player->TrainingCenterCount--;
         }
         else if (InputValue == 4 && player->TrainingCenterCount > 0)
         {
@@ -182,12 +179,14 @@ void TrainingCenterIntro(_Village* village, Player* player, _Dungeon dungeon[])
         else if (InputValue == 5)
         {
             system("cls");
-            VillageMainScene(village, player, dungeon);
             break;
         }
 
-        printf("\n다시 입력해주세요.");
-        system("cls");
+        else
+        {
+            printf("\n다시 입력해주세요.");
+            system("cls");
+        }
     }
 }
 
@@ -210,9 +209,9 @@ void HPTrainingCenter(Player* player)
     }
 
     printf("\n%s의 체력이 증가하였습니다!\n", player->PlayerName);
-    printf("\n훈련 전 체력 : %d", player->Hp);
-    player->Hp++;
-    printf("\n훈련 후 체력 : %d", player->Hp);
+    printf("\n훈련 전 체력 : %d", player->MaxHp);
+    player->MaxHp++;
+    printf("\n훈련 후 체력 : %d", player->MaxHp);
     Sleep(1200);
     system("cls");
 }
@@ -235,29 +234,15 @@ void MPTrainingCenter(Player* player)
     }
 
     printf("\n%s의 마나가 증가하였습니다!\n", player->PlayerName);
-    printf("\n훈련 전 마나 : %d", player->Mp);
-    player->Mp++;
-    printf("\n훈련 후 마나 : %d", player->Mp);
+    printf("\n훈련 전 마나 : %d", player->MaxMp);
+    player->MaxMp++;
+    printf("\n훈련 후 마나 : %d", player->MaxMp);
     Sleep(1200);
     system("cls");
 }
 
 void SkillPointTrainingCenter(Player* player)
 {
-    time_t start_time;
-
-    start_time = time(NULL);
-
-    // 1초 동안 훈련
-    while (true)
-    {
-        system("cls");
-        printf("훈련중...!\n");
-        Sleep(500);
-        system("cls");
-        if ((double)(start_time / 1) * 100 >= 100)
-            break;
-    }
 
     printf("\n%s의 스킬 포인트가 증가하였습니다!\n", player->PlayerName);
     printf("\n훈련 전 스킬 포인트 : %d", player->SkillPoint);
@@ -414,7 +399,6 @@ void QuestIntro(_Village* village, Player* player, _Dungeon dungeon[])
         if (InputValue == 2) 
         { 
             system("cls");
-            VillageMainScene(village, player, dungeon);
             break;
         }
         printf("\n\n받아올 퀘스트 넘버를 입력해주세요 : ");
@@ -424,7 +408,6 @@ void QuestIntro(_Village* village, Player* player, _Dungeon dungeon[])
             printf("\n\n퀘스트를 수락했습니다!");
             Sleep(1000);
             system("cls");
-            VillageMainScene(village, player, dungeon);
             break;
         }
         else
@@ -432,7 +415,6 @@ void QuestIntro(_Village* village, Player* player, _Dungeon dungeon[])
             printf("\n\n이미 수락한 퀘스트입니다!");
             Sleep(1000);
             system("cls");
-            VillageMainScene(village, player, dungeon);
             break;
         }
     }
@@ -648,7 +630,6 @@ void StoreIntro(_Village* village, Player* player, _Dungeon dungeon[])
         if (InputValue == 4)
         {
             system("cls");
-            VillageIntro(village, player, dungeon);
             break;
         }
     }

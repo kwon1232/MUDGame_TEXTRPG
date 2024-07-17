@@ -1,12 +1,2 @@
-﻿  Dungeon.c
-  Intro.c
-  Map.c
-  MUDGame.c
-  Player.c
-D:\PROJECT\C_C++\MUDGame_TEXTRPG\MUDGame\MUDGame.c(10,8): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  PlayerSkill.c
-  Village.c
-  WinAPIControl.c
-  Monster.c
-  코드를 생성하고 있습니다...
+﻿  Village.c
   MUDGame.vcxproj -> D:\PROJECT\C_C++\MUDGame_TEXTRPG\x64\Debug\MUDGame.exe

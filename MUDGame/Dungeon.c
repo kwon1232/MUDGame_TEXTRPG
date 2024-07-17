@@ -29,11 +29,50 @@ void DungeonInitial(_Dungeon dungeonArr[], Player* player)
 	player->Hp = player->MaxHp;
 	player->Mp = player->MaxMp;
 
-	if (player->Level <= 1)
+	if (player->Level == 1)
 	{
 		PrintDungeonIntro(&dungeonArr[DungeonLevel]);
 		DungeonMatchup(player, &dungeonArr[DungeonLevel]);
 	}
+
+	else if (player->Level == 2)
+	{
+		while (true)
+		{
+			printf("\n\n던전 난이도를 골라주세요 ! \n");
+			printf("\n 1. 오솔길 (쉬움)\n");
+			printf("\n 2. 깊은 숲 속 (보통)\n");
+			printf("입력 : ");
+			scanf("%d", &DungeonLevel);
+			system("cls");
+			if (DungeonLevel <= 2 && DungeonLevel > 0)
+			{
+				PrintDungeonIntro(&dungeonArr[DungeonLevel - 1]);
+				DungeonMatchup(player, &dungeonArr[DungeonLevel - 1]);
+				break;
+			}
+		}
+	}
+
+	else
+	{
+		while (true)
+		{
+			printf("\n\n던전 난이도를 골라주세요 ! \n");
+			printf("\n 1. 오솔길 (쉬움)\n");
+			printf("\n 2. 깊은 숲 속 (보통)\n");
+			printf("입력 : ");
+			scanf("%d", &DungeonLevel);
+			system("cls");
+			if (DungeonLevel <= 3 && DungeonLevel > 0)
+			{
+				PrintDungeonIntro(&dungeonArr[DungeonLevel - 1]);
+				DungeonMatchup(player, &dungeonArr[DungeonLevel - 1]);
+				break;
+			}
+		}
+	}
+
 	// 여기서 함수 -> 입장 -> 탈출을 반복해서 로직을 진행 시키고 배열 시작점은 여기만 알게끔 해주기
 	//SetMap(dungeon);
 
@@ -54,6 +93,7 @@ void DungeonMatchup(Player* player, _Dungeon* dungeon)
 			int num;
 			printf("\n1. 마을로 돌아간다.\n");
 			printf("2. 계속 던전을 탐험한다\n");
+			player->Level++;
 			scanf("%d", &num);
 			if (num == 1)
 				return;
@@ -139,8 +179,6 @@ void PrintDungeonIntro(_Dungeon* dungeon)
 	// 틱으로 2~4초 간격으로 몬스터랑 만남
 	// 몬스터 3마리 잡으면 다음 던전으로 갈지, 아니면 마을로 돌아갈지 선택 가능
 	// 던전 0 인덱스 -> 던전 1 인덱스 순으로 순차적으로 접근해야함
-
-	
 }
 
 void SetMap(_Dungeon* dungeon)

@@ -3,6 +3,8 @@
 
 #include "Framework.h"
 #include "MUDGame.h"
+#include <mmsystem.h>
+#pragma comment(lib,"winmm.lib")
 
 int main()
 {
@@ -15,7 +17,7 @@ int main()
 
 	_Village VillageMap[4];
 	_Dungeon DungeonMap[3];
-
+	PlaySound(TEXT("../aaa.wav"), NULL, SND_ASYNC | SND_LOOP);
 	MapInitialization(VillageMap, DungeonMap);
 	while (true)
 	{
