@@ -865,8 +865,10 @@ void PlayerAddItem(Player* player, struct MONSTER* monster)
 	}
 }
 
-void CheckPlayerQuestList(Player* player)
+void UsePlayerItem(Player* player)
 {
+
 }
+
 
 

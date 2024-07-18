@@ -194,8 +194,6 @@ void playerWarriorSkillInitial(Player* player);
 void playerArcherSkillInitial(Player* player);
 
 
-
-
 //Skill Update
 
 // Player Skill List
@@ -203,10 +201,10 @@ void PlayerSkillListPrint(Player* player);
 // Player Skill Up
 void PlayerSkillUp(Player* player);
 
-
-//Add Item
+// Add Item
 void PlayerAddItem(Player* player, struct MONSTER* monster);
-
+// Use Item
+void UsePlayerItem(Player* player);
 
 // Quest
 void CheckPlayerQuestList(Player* player);
